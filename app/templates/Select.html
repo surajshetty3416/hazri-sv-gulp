@@ -1,0 +1,59 @@
+﻿<ion-view>
+    <ion-header-bar align-title="left" class="bar-balanced">
+        <h1 class="title">Enter Your Details</h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-navicon-round" menu-toggle="left"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="wrap">
+            <div class="img center">
+               <i class="icon ion-android-list"></i>
+            </div>
+
+            <form name="details" style="width:80%;margin:0 auto;">
+                <label class="item item-input ">
+                    <span class="input-label">Enter UID</span>
+                    <Input type="text" ng-model="detail.uid">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-balanced " type="submit" ng-disabled="detail.uid == null||detail.uid == ''" ng-click ="direct()">View Attendance</button>
+                </label>
+                <div class="center">OR</div>
+                
+                
+                <label class="item item-input item-select">
+                    <span class="input-label">Department</span>
+                    <select name="deparment" id="deparment" ng-model="detail.dept" ng-change="reset()">
+                        <option value="{{dept.id}}" ng-repeat="dept in detail.deptoption">{{dept.name}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Year</span>
+                    <select name="year" id="year" ng-model="detail.year" ng-change="providesemop()">
+                        <option value="fe">First Year</option>
+                        <option value="se">Second Year</option>
+                        <option value="te">Third Year</option>
+                        <option value="be">Final Year</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Semester</span>
+                    <select name="semester" id="semester" ng-model="detail.sem">
+                        <option ng-repeat="option in detail.semoption" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+                </label>
+                <label class="item">
+                    <button class="button button-block button-balanced " type="submit"  ng-disabled="detail.sem == null" ng-click ="setdata()">Let Me In</button>
+                </label>
+            </form>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-dark" >
+        <div class="title" style="line-height: 120%;font-size:99%;margin-top:5px">
+            Developed by<br>
+            Faris | Suraj
+        </div>
+    </div>
+</ion-view>

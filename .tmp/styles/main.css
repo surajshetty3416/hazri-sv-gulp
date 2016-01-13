@@ -9198,3 +9198,32 @@ a.button {
  */
 .content {
   padding: 1rem; }
+
+.wrap {
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5%; }
+
+.center {
+  text-align: center;
+  margin: 0 auto; }
+
+.right {
+  text-align: right; }
+
+.img {
+  font-size: 100px;
+  color: slategrey;
+  margin-bottom: 5%;
+  margin-top: 5%; }
+
+.defaulter {
+  color: red; }
+
+.warn {
+  color: #f39c12; }
+
+.ok {
+  color: green; }
+
+percent {
+  font-size: 25px; }
