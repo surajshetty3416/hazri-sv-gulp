@@ -14,7 +14,6 @@ angular.module('HazriSV')
                     var data = childSnapshot.val();
                     deptoption.push({ 'name': data.name, 'id': id });
                 });
-                console.log(deptoption);
                 $localstorage.setObj('deptoption', deptoption);
                 defer.resolve(deptoption);
             }, function(error){

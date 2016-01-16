@@ -5,7 +5,7 @@
     <ion-content class="padding">
         <div class="list">
             <div class="item item-divider">{{sub.name}} ({{sub.type=='th'? 'Theory' : 'Practical' }})</div>
-            <div class="card" ng-repeat="topic in topics | reverse | limitTo:limit | filter: {content:'!!'} " ng-if="topic.content!=''">
+            <div class="card" ng-repeat="topic in topics | orderBy:'date' |reverse | limitTo:limit | filter: {content:'!!'} " ng-if="topic.content!=''">
                 <div class="item item-text-wrap">
                     {{topic.content}}
                 </div>

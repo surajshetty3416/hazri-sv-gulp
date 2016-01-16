@@ -20,21 +20,21 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
             //     window.plugins.OneSignal.enableInAppAlertNotification(true);
         });
 
-        // $rootScope.$on('loading:show', function () {
-        //     $ionicLoading.show();
-        // });
+        $rootScope.$on('loading:show', function () {
+            $ionicLoading.show();
+        });
 
-        // $rootScope.$on('loading:hide', function () {
-        //     $ionicLoading.hide();
-        // });
+        $rootScope.$on('loading:hide', function () {
+            $ionicLoading.hide();
+        });
 
-        // $rootScope.$on("$stateChangeStart", function () {
-        //     $rootScope.$broadcast('loading:show');
-        // });
+        $rootScope.$on("$stateChangeStart", function () {
+            $rootScope.$broadcast('loading:show');
+        });
 
-        // $rootScope.$on("$stateChangeSuccess", function () {
-        //     $rootScope.$broadcast('loading:hide');
-        // });
+        $rootScope.$on("$stateChangeSuccess", function () {
+            $rootScope.$broadcast('loading:hide');
+        });
 
 
     })
@@ -42,52 +42,46 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
     .config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
 
         $stateProvider
-            .state('menu', {
-                url: '/menu',
-                templateUrl: 'templates/Menu.html',
-                controller: 'MenuCtrl'
-            })
-
+            
             .state('select', {
                 url: '/select',
                 //cache: false,
                 templateUrl: 'templates/Select.html',
-                controller: 'SelectCtrl',
-                // resolve: {
-                //     "deptoption": function (GetDepts) {
-                //         return GetDepts;
-                //    }
-                // }
+                controller: 'SelectCtrl'
             })
+            
             .state('studentOptions', {
                 url: '/studentoptions',
                 cache: false,
                 templateUrl: 'templates/StudentOptions.html'
             })
+            
             .state('nameList', {
                 url: '/namelist',
                 cache: false,
                 templateUrl: 'templates/NameList.html',
                 controller: 'NameListCtrl'
             })
+            
             .state('subList', {
                 url: '/sublist',
                 cache: false,
                 templateUrl: 'templates/SubList.html',
                 controller: 'SubListCtrl'
             })
+            
             .state('topicDetails', {
                 url: '/topicdetails',
                 cache: false,
                 templateUrl: 'templates/TopicDetails.html',
                 controller: 'TopicDetailsCtrl'
             })
+            
             .state('batchOption', {
                 url: '/batchoption',
                 cache: false,
                 templateUrl: 'templates/BatchOption.html',
                 controller: 'BatchOptionCtrl'
-
             })
 
             .state('timetable', {
@@ -95,14 +89,6 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 cache: false,
                 templateUrl: 'templates/Timetable.html',
                 controller: 'TimetableCtrl'
-
-            })
-
-            .state('settings', {
-                url: '/settings',
-                cache: false,
-                templateUrl: 'templates/Settings.html',
-                controller: 'SettingsCtrl'
 
             })
 
@@ -120,12 +106,12 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 controller: 'AttendanceDetailsCtrl'
 
             })
-            .state('option2', {
-                url: '/option2',
+            
+            .state('option', {
+                url: '/option',
                 cache: false,
-                templateUrl: 'templates/Option2.html',
-               // controller: 'AttendanceDetailsCtrl'
-
+                templateUrl: 'templates/Option.html',
+               // controller: 'OptionDetailsCtrl'
             });
 
         $urlRouterProvider.otherwise('/select');
