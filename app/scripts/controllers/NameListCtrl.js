@@ -12,7 +12,7 @@ angular.module('HazriSV')
                 var data = childSnapshot.val();
                 var key = childSnapshot.key();
                 if (data.year === $localstorage.get('year')) {
-                    $scope.nameoption.push({ name: data.name, rollno: data.rollno , uid:key});
+                    $scope.nameoption.push({ name: data.name, rollno: data.rollno , uid:key,gender: data.gender});
                 }
             });
             $ionicLoading.hide();

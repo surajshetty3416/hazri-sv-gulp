@@ -8,40 +8,47 @@ angular.module('HazriSV')
             prper: null,
             thper: null
         };
-
+        $ionicLoading.show();
         $scope.getdata = function () {
             var alldata,url='', pratt = [], thatt = [], prtot = [], thtot = [], prsub = [], thsub = [], totpatt = 0, atpatt = 0, tottatt = 0, attatt = 0;//, present = ['Present'], absent = ['Absent'];
-            // if($localstorage.get('direct')=='true')
-            console.log($localstorage.get('uid'));
-            url='http://cors.io/?u=http://bvcoeportal.orgfree.com/api/student_att_calc.php/'+$localstorage.get('uid')+'.json';
-            // if($localstorage.get('direct')=='false')
-            
-            // {url='http://cors.io/?u=http://bvcoeportal.orgfree.com/api/index.php/' + $localstorage.get('dept') + '/' + $localstorage.get('year') + '/' + $localstorage.get('sem') + '/' + $localstorage.get('rollno') + '.json';}
-            $http({ method: 'GET', url: url }).
+            //console.log($localstorage.get('uid'));
+            url='http://bvcoeportal.orgfree.com/api/student_att_calc.php/'+$localstorage.get('dept')+'/'+$localstorage.get('year')+'/'+$localstorage.get('sem')+'/'+$localstorage.get('uid');
+            $http({ method: 'GET', url:url}).
                 then(function successCallback(response) {
                     alldata = response.data;
-                    alldata.forEach(function (element) {
-                        if (element.type === 'pr') {
-                            pratt.push(element.att);
-                            prtot.push(element.totalAtt);
-                            prsub.push(element.sname);
-                            totpatt += element.totalAtt;
-                            atpatt += element.att;
+                   // console.log(alldata.uid);
+                    // var uid = alldata.uid;
+                    // var rollno =alldata.rollno;
+                    // var name =alldata.name;
+                    // var attTh= alldata.attDataTh;
+                    // var attPr=alldata.attDataPr;
+                    var data=alldata.attDataPr;
+                  for(var key in  data )
+                        {
+                            
+                            pratt.push(data[key].att);
+                            prtot.push(data[key].totalAtt);
+                            prsub.push(data[key].sname);
+                            totpatt += data[key].totalAtt;
+                            atpatt += data[key].att;
                         }
-                        if (element.type === 'th') {
-                            thatt.push(element.att);
-                            thtot.push(element.totalAtt);
-                            thsub.push(element.sname);
-                            tottatt += element.totalAtt;
-                            attatt += element.att;
+                         data=alldata.attDataTh;
+                         for(var key in  data )
+                        {
+                            
+                            thatt.push(data[key].att);
+                            thtot.push(data[key].totalAtt);
+                            thsub.push(data[key].sname);
+                            tottatt += data[key].totalAtt;
+                            attatt += data[key].att;
                         }
-                    }, this);
                     $scope.per.thper = attatt / tottatt * 100;
                     $scope.per.prper = atpatt / totpatt * 100;
                     $scope.per.totper = (attatt + atpatt) / (tottatt + totpatt) * 100;
 
-                }, function errorCallback(response) {
-                    console.log(response);
+                        }, function errorCallback(response) {
+                            console.log(response);
+                        
                 }).finally(function () {
                     $ionicLoading.hide();
                     $scope.$broadcast('scroll.refreshComplete');

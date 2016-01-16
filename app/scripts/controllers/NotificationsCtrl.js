@@ -2,7 +2,7 @@
 
 angular.module('HazriSV')
 
-    .controller('NotificationCtrl', function ($scope, $timeout, $localstorage) {
+    .controller('NotificationsCtrl', function ($scope, $timeout, $localstorage) {
 
         Object.keys($localstorage.getObj('unreadnoti')).forEach(function (key) {
             $localstorage.pushObj('readnoti', $localstorage.getObj('unreadnoti')[key]);
