@@ -37,7 +37,7 @@ angular.module('HazriSV')
                     }
                     // $scope.per.thper = attatt / tottatt * 100;
                     // $scope.per.prper = atpatt / totpatt * 100;
-                    $scope.per.totper = (attatt + atpatt) / (tottatt + totpatt) * 100;
+                    $scope.per.totper = (attatt + atpatt + $scope.data.extra) / (tottatt + totpatt) * 100;
 
                 }, function errorCallback(response) {
                     console.log(response);

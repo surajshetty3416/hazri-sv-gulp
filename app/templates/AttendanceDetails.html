@@ -30,6 +30,14 @@
                             {{data.rollno}}
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col col-25">
+                            <strong>Extras</strong>
+                        </div>
+                        <div class="col">
+                            {{data.extra}}
+                        </div>
+                    </div>
                 </div>
                 <div class="item item-text-wrap" style="font-size: 20px;">
                     Total Attendance : <strong id="percent" ng-class="per.totper>80?'ok':(per.totper<75&&per.totper>0?'defaulter':'warn')">{{per.totper | number:2}} %</strong>
