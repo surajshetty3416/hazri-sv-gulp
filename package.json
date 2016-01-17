@@ -54,7 +54,10 @@
   },
   "cordovaPlugins": [
     "onesignal-cordova-plugin",
-    "phonegap-plugin-push"
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [
     "android",

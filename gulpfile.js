@@ -148,20 +148,20 @@ gulp.task('fonts', function() {
 
 // generate iconfont
 gulp.task('iconfont', function(){
-  return gulp.src('app/icons/*.svg', {
-        buffer: false
-    })
-    .pipe(plugins.iconfontCss({
-      fontName: 'ownIconFont',
-      path: 'app/icons/own-icons-template.css',
-      targetPath: '../styles/own-icons.css',
-      fontPath: '../fonts/'
-    }))
-    .pipe(plugins.iconfont({
-        fontName: 'ownIconFont'
-    }))
-    .pipe(gulp.dest(path.join(targetDir, 'fonts')))
-    .on('error', errorHandler);
+//   return gulp.src('app/icons/*.svg', {      //commented because of array buffer length error
+//         buffer: false
+//     })
+//     .pipe(plugins.iconfontCss({
+//       fontName: 'ownIconFont',
+//       path: 'app/icons/own-icons-template.css',
+//       targetPath: '../styles/own-icons.css',
+//       fontPath: '../fonts/'
+//     }))
+//     .pipe(plugins.iconfont({
+//         fontName: 'ownIconFont'
+//     }))
+//     .pipe(gulp.dest(path.join(targetDir, 'fonts')))
+//     .on('error', errorHandler);
 });
 
 // copy images

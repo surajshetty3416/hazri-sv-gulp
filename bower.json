@@ -1,7 +1,7 @@
 {
   "name": "HazriSV",
   "author": "Faris And Suraj <s3.netchamp@gmail.com>",
-  "private": "true",
+  "private": true,
   "devDependencies": {},
   "dependencies": {
     "angular": "~1.4.8",

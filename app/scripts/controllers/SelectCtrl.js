@@ -1,7 +1,7 @@
 'use strict';
 angular.module('HazriSV')
 
-    .controller('SelectCtrl', function ($scope, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
+    .controller('SelectCtrl', function ($scope, isOnline, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
         $scope.detail = {
             dept: null,
             year: null,
@@ -11,31 +11,17 @@ angular.module('HazriSV')
             semoption: [],
             uid: null
         };
-
-        // var push = new Ionic.Push({
-        //     'onNotification': function (notification) {
-        //         $localstorage.pushObj('unreadnoti', { 'title': notification.title, 'message': notification.text, 'date': Date() });
-        //     },
-        //     'pluginConfig': {
-        //         'android': {
-        //         }
-        //     }
-        // });
-        //push.register();
-        //console.log(checknet.isOnline());
-        $ionicLoading.show();
         GetDepts.then(function (val) {
-            $ionicLoading.hide();
+            //  $ionicLoading.hide();
             $scope.detail.deptoption = val;
 
         });
 
 
-      //  console.log($scope.detail.deptoption);
+        //  console.log($scope.detail.deptoption);
 
         $scope.noti = Object.keys($localstorage.getObj('unreadnoti'));//.map(function (key) {return $localstorage.getObj('unreadnoti')[key]});
-      //  console.log($scope.noti);
-
+        //  console.log($scope.noti);
 
 
         $scope.reset = function () {
@@ -62,38 +48,23 @@ angular.module('HazriSV')
             $localstorage.set('dept', $scope.detail.dept);
             $localstorage.set('year', $scope.detail.year);
             $localstorage.set('sem', $scope.detail.sem);
-            
+
             $state.go('studentOptions');
 
-            // var user = Ionic.User.current();
-            // if (!user.id) {
-            //     user.id = Ionic.User.anonymousId();
-            // }
-
-            // user.set('Department', $localstorage.get('dept'));
-            // user.set('Year', $localstorage.get('year'));
-            // user.save();
-
-            // var callback = function () {
-            //     push.addTokenToUser(user);
-            //     user.save();
-            // };
-            // push.register(callback);
         };
         $scope.direct = function () {
             var checkuid = function () {
                 var match = false;
                 FirebaseRef.child('students').on('value', function (snapshot) {
-                   // console.log(snapshot);
                     snapshot.forEach(function (depts) {
-                       // console.log(depts);
+
                         depts.forEach(function (uid) {
                             if ($scope.detail.uid.toUpperCase() === uid.key()) {
                                 match = true;
-                               // console.log(uid);
+
                                 $localstorage.set('dept', depts.key());
                                 $localstorage.set('year', uid.val().year);
-                                $localstorage.set('sem',uid.val().year=='be'? '8':uid.val().year=='te'?'6':uid.val().year=='se'?'4':'2');
+                                $localstorage.set('sem', uid.val().year == 'be' ? '8' : uid.val().year == 'te' ? '6' : uid.val().year == 'se' ? '4' : '2');
                                 $localstorage.set('rollno', uid.val().rollno);
                                 $localstorage.set('uid', $scope.detail.uid.toUpperCase());
                             }

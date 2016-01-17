@@ -14,17 +14,14 @@ angular.module('HazriSV')
                     var data = childSnapshot.val();
                     deptoption.push({ 'name': data.name, 'id': id });
                 });
-                console.log(deptoption);
                 $localstorage.setObj('deptoption', deptoption);
                 defer.resolve(deptoption);
             }, function(error){
-                console.log(error);
                 defer.reject();
             });
         }
         else {
             deptoption = $localstorage.getObj('deptoption');
-            console.log('dept load success');
             defer.resolve(deptoption);
         }
         return defer.promise;
