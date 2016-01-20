@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('HazriSV')
   .factory('GetDepts', function(FirebaseRef, $localstorage, $q) {
       

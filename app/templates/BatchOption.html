@@ -7,9 +7,8 @@
             <div class="item item-icon-left item-divider">Batches
                 <i class="icon ion-compose"></i>
             </div>
-
             <div ng-repeat="(key,value) in batoption" ng-if="value !=null">
-                <a class="item " ng-click="setbat(key)" ui-sref="topicDetails" >
+                <a class="item " ng-click="setbat(key)" ui-sref="topicDetails">
                     BATCH {{key}}
                 </a>
             </div>

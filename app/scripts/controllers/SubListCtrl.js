@@ -2,13 +2,10 @@
 
 angular.module('HazriSV')
 
-  .controller('SubListCtrl', function ($scope, $localstorage, $ionicLoading,FirebaseRef) {
+    .controller('SubListCtrl', function ($scope, $localstorage, $ionicLoading, FirebaseRef) {
         $scope.suboption = [];
         $scope.nameoption = [];
         $ionicLoading.show();
-
-       // var ref = new Firebase('https://hazri.firebaseio.com/subjects/' + $localstorage.get('dept'));
-
         FirebaseRef.child('/subjects/' + $localstorage.get('dept')).on('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
                 var key = childSnapshot.key();
@@ -26,5 +23,5 @@ angular.module('HazriSV')
         $scope.setpsub = function (sub) {
             $localstorage.setObj('sub', { 'name': sub.name, 'type': 'pr', 'id': sub.subid });
         };
-    
-  });
+
+    });

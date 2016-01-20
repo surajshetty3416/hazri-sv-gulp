@@ -1,19 +1,18 @@
 'use strict';
 
-
 angular.module('HazriSV')
 
     .factory('checknet', ['$timeout', function ($timeout) {
         return {
-                isOnline: function () {
+            isOnline: function () {
                 var xhr = new XMLHttpRequest();
                 var file = "https://hazritest.firebaseio.com/test";
                 var randomNum = Math.round(Math.random() * 10000);
-                xhr.timeout = 5000; 
+                xhr.timeout = 5000;
                 xhr.ontimeout = function () {
                     console.log('timeout');
                     return false;
-};
+                };
 
                 xhr.open('GET', file + "?rand=" + randomNum, true);
 

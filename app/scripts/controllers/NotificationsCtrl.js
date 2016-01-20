@@ -12,12 +12,11 @@ angular.module('HazriSV')
         $scope.limit = 2;
         $scope.canload = true;
         $scope.items = Object.keys($localstorage.getObj('readnoti')).map(function (key) { return $localstorage.getObj('readnoti')[key]; });
-        //console.log($scope.items);
         $scope.loadolder = function () {
             if ($scope.items.length > $scope.limit)
-               { $scope.limit += 2;}
+            { $scope.limit += 2; }
             else
-                {$scope.canload = false;}
+            { $scope.canload = false; }
         };
         $scope.doRefresh = function () {
             $timeout(function () {

@@ -3,7 +3,8 @@
 
 node_modules/
 platforms/
-plugins/
+plugins/*
+!plugins/fetch.json
 bower_components/
 
 .tmp/

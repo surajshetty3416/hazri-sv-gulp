@@ -2,7 +2,7 @@
 
 angular.module('HazriSV')
 
-    .controller('BatchOptionCtrl', function ($scope, $ionicLoading, $localstorage,FirebaseRef) {
+    .controller('BatchOptionCtrl', function ($scope, $ionicLoading, $localstorage, FirebaseRef) {
         $scope.batoption = [];
         $ionicLoading.show();
         FirebaseRef.child('studentCount/' + $localstorage.get("dept")).on('value', function (snapshot) {

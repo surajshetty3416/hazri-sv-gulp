@@ -1,9 +1,8 @@
 'use strict';
 
-
 angular.module('HazriSV')
 
-.factory('$localstorage', ['$window', function ($window) {
+    .factory('$localstorage', ['$window', function ($window) {
         return {
             set: function (key, value) {
                 $window.localStorage[key] = value;
@@ -23,12 +22,12 @@ angular.module('HazriSV')
             clearObj: function (key) {
                 $window.localStorage[key] = JSON.stringify({});
             },
-             pushObj: function (key,value) {
-                 var data=JSON.parse($window.localStorage[key] || '{}');
-                 data[Object.keys(data).length]=value; 
+            pushObj: function (key, value) {
+                var data = JSON.parse($window.localStorage[key] || '{}');
+                data[Object.keys(data).length] = value;
                 $window.localStorage[key] = JSON.stringify(data);
             },
-            clearAll:function () {
+            clearAll: function () {
                 $window.localStorage.clear();
             }
         };

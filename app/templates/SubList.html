@@ -7,7 +7,6 @@
             <div class="item item-icon-left item-divider">Theory
                 <i class="icon ion-compose"></i>
             </div>
-
             <div ng-repeat="sub in suboption| filter: { theory: 'true' }">
                 <a class="item " ng-click="settsub(sub)" ui-sref="topicDetails">
                     {{sub.name}}
@@ -16,7 +15,6 @@
             <div class="item item-icon-left item-divider">Practical
                 <i class="icon ion-paintbucket"></i>
             </div>
-
             <div ng-repeat="sub in suboption| filter: { practical: 'true' }">
                 <a class="item " ng-click="setpsub(sub)" ui-sref="batchOption">
                     {{sub.name}}

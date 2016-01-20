@@ -1,7 +1,8 @@
 'use strict';
+
 angular.module('HazriSV')
 
-    .controller('SelectCtrl', function ($scope, isOnline, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
+    .controller('SelectCtrl', function ($scope, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
         $scope.detail = {
             dept: null,
             year: null,
@@ -11,18 +12,15 @@ angular.module('HazriSV')
             semoption: [],
             uid: null
         };
+
         GetDepts.then(function (val) {
             //  $ionicLoading.hide();
             $scope.detail.deptoption = val;
 
         });
 
-
-        //  console.log($scope.detail.deptoption);
-
-        $scope.noti = Object.keys($localstorage.getObj('unreadnoti'));//.map(function (key) {return $localstorage.getObj('unreadnoti')[key]});
-        //  console.log($scope.noti);
-
+        $scope.noti = Object.keys($localstorage.getObj('unreadnoti'));
+        //.map(function (key) {return $localstorage.getObj('unreadnoti')[key]});
 
         $scope.reset = function () {
             $scope.detail.year = null;
@@ -48,20 +46,17 @@ angular.module('HazriSV')
             $localstorage.set('dept', $scope.detail.dept);
             $localstorage.set('year', $scope.detail.year);
             $localstorage.set('sem', $scope.detail.sem);
-
             $state.go('studentOptions');
-
         };
+
         $scope.direct = function () {
             var checkuid = function () {
                 var match = false;
                 FirebaseRef.child('students').on('value', function (snapshot) {
                     snapshot.forEach(function (depts) {
-
                         depts.forEach(function (uid) {
                             if ($scope.detail.uid.toUpperCase() === uid.key()) {
                                 match = true;
-
                                 $localstorage.set('dept', depts.key());
                                 $localstorage.set('year', uid.val().year);
                                 $localstorage.set('sem', uid.val().year == 'be' ? '8' : uid.val().year == 'te' ? '6' : uid.val().year == 'se' ? '4' : '2');
@@ -70,23 +65,19 @@ angular.module('HazriSV')
                             }
                         });
                     });
-
                     if (match)
                         $state.go('attDetails');
                     else {
                         $ionicPopup.alert({
                             title: "INVALID UID",
                             // template: 'Please check UniqueID printed on CollegeID card ',
-                            okType: "button-balanced"
+                            okType: "button-assertive"
                         }).then(function () {
                             //$state.go('select');
                         });
                     }
                 });
-
             };
             checkuid();
         }
-
-
     });

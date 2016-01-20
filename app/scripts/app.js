@@ -2,15 +2,8 @@
 
 angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'highcharts-ng'])
 
-    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage ,$state) {
-
+    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork) {
         $ionicPlatform.ready(function () {
-
-            var didReceiveRemoteNotificationCallBack = function (jsonData) {
-               // alert("Notification received:\n" + JSON.stringify(jsonData));
-                $localstorage.pushObj("unreadnoti", { "title": jsonData.additionalData.title, "message": jsonData.message, "date": Date() });
-               $state.go('notifications');
-            }
             if (window.StatusBar) {
                 if (ionic.Platform.isAndroid()) {
                     StatusBar.backgroundColorByHexString("#33cd5f");
@@ -18,9 +11,36 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                     StatusBar.styleLightContent();
                 }
             }
-            window.plugins.OneSignal.init('e4b6d1df-1400-476d-b108-57baa5b960dc',
-                { googleProjectNumber: '445630381429' }, didReceiveRemoteNotificationCallBack);
-            window.plugins.OneSignal.enableNotificationsWhenActive(true);
+            if (window.cordova) {
+                window.plugins.OneSignal.init('e4b6d1df-1400-476d-b108-57baa5b960dc',
+                    { googleProjectNumber: '445630381429' }, NotificationRecieved);
+                window.plugins.OneSignal.enableNotificationsWhenActive(true);
+
+                var NotificationRecieved = function (jsonData) {
+                    $localstorage.pushObj("unreadnoti", { "title": jsonData.additionalData.title, "message": jsonData.message, "date": Date() });
+                    $state.go('notifications');
+                }
+
+                $rootScope.isOnline = $cordovaNetwork.isOnline();
+                $rootScope.$apply();
+            }
+            else {
+                $rootScope.isOnline = true;
+            }
+
+            $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
+                $rootScope.isOnline = true;
+                console.log('online');
+                $rootScope.$apply();
+            });
+ 
+            // listen for Offline event
+            $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
+                $rootScope.isOnline = false;
+                console.log('offline');
+                $rootScope.$apply();
+            });
+
   
             // Show an alert box if a notification comes in when the user is in your app.
             //window.plugins.OneSignal.enableInAppAlertNotification(true);
