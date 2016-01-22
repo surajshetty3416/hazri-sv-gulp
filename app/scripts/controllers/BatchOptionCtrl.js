@@ -5,12 +5,10 @@ angular.module('HazriSV')
     .controller('BatchOptionCtrl', function ($scope, $ionicLoading, $localstorage, FirebaseRef) {
         $scope.batoption = [];
         $ionicLoading.show();
-        FirebaseRef.child('studentCount/' + $localstorage.get("dept")).on('value', function (snapshot) {
+        FirebaseRef.child('studentCount/' + $localstorage.get("dept")).orderByChild('year').equalTo($localstorage.get('year')).once('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
                 var data = childSnapshot.val();
-                if (data.year === $localstorage.get('year')) {
                     $scope.batoption = data.batchno;
-                }
             });
             $ionicLoading.hide();
         });

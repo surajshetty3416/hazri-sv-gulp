@@ -2,7 +2,8 @@
 
 angular.module('HazriSV')
 
-    .controller('SelectCtrl', function ($scope, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
+    .controller('SelectCtrl', function ($scope, $ionicModal, alertPopup, $rootScope, $ionicPopover, $ionicLoading, $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state) {
+        //initialization
         $scope.detail = {
             dept: null,
             year: null,
@@ -12,13 +13,29 @@ angular.module('HazriSV')
             semoption: [],
             uid: null
         };
-
-        GetDepts.then(function (val) {
-            //  $ionicLoading.hide();
-            $scope.detail.deptoption = val;
-
+        
+        
+        //Registration Modal
+        $ionicModal.fromTemplateUrl('templates/RegisterForNotification.html', {
+            scope: $scope,
+            animation: "fade-in-scale"
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+        
+        //Options Popover
+        $ionicPopover.fromTemplateUrl('templates/Options.html', {
+            scope: $scope,
+        }).then(function (popover) {
+            $scope.popover = popover;
         });
 
+
+        GetDepts.then(function (val) {
+           $scope.detail.deptoption = val;
+        });
+        
+       
         $scope.noti = Object.keys($localstorage.getObj('unreadnoti'));
         //.map(function (key) {return $localstorage.getObj('unreadnoti')[key]});
 
@@ -40,6 +57,9 @@ angular.module('HazriSV')
             if ($scope.detail.year === 'be') {
                 $scope.detail.semoption = [{ id: '7', name: 'Semester 7' }, { id: '8', name: 'Semester 8' }];
             }
+            // FirebaseRef.child("year/"+$scope.detail.year).once('value',function(snapshot){
+            //    $scope.detail.semoption =  
+            // });          //later
         };
 
         $scope.setdata = function () {
@@ -50,7 +70,8 @@ angular.module('HazriSV')
         };
 
         $scope.direct = function () {
-            var checkuid = function () {
+            $ionicLoading.show();
+                var checkuid = function () {
                 var match = false;
                 FirebaseRef.child('students').on('value', function (snapshot) {
                     snapshot.forEach(function (depts) {
@@ -68,16 +89,23 @@ angular.module('HazriSV')
                     if (match)
                         $state.go('attDetails');
                     else {
-                        $ionicPopup.alert({
-                            title: "INVALID UID",
-                            // template: 'Please check UniqueID printed on CollegeID card ',
-                            okType: "button-assertive"
-                        }).then(function () {
-                            //$state.go('select');
+                        $ionicLoading.hide();
+                        alertPopup('Invalid UID', 'assertive').then(function () {
                         });
                     }
                 });
             };
-            checkuid();
+         checkuid();
         }
+
+        $scope.registerData = [];
+        $scope.registerData.dept = "";
+        $scope.registerData.year = "";
+        $scope.registerData.confirm = function () {
+            $scope.modal.hide();
+            window.plugins.OneSignal.sendTags({ "Department": $scope.registerData.dept, "Year": $scope.registerData.year });
+            window.plugins.OneSignal.registerForPushNotifications();
+        }
+
+
     });

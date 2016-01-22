@@ -6,11 +6,11 @@ angular.module('HazriSV')
         $scope.suboption = [];
         $scope.nameoption = [];
         $ionicLoading.show();
-        FirebaseRef.child('/subjects/' + $localstorage.get('dept')).on('value', function (snapshot) {
+        FirebaseRef.child('/subjects/' + $localstorage.get('dept')).orderByChild("year").equalTo($localstorage.get('year')).once('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
                 var key = childSnapshot.key();
                 var data = childSnapshot.val();
-                if (data.year === $localstorage.get('year') && data.sem === $localstorage.get('sem')) {
+                if (data.sem === $localstorage.get('sem')) {
                     $scope.suboption.push({ name: data.fullname, subid: key, theory: data.theory, practical: data.practical });
                 }
             });

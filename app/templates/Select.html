@@ -2,7 +2,9 @@
     <ion-header-bar class="bar-balanced">
         <h1 class="title">Hazri - Student Version</h1>
         <div class="buttons">
-            <button class="button button-icon icon ion-navicon-round" ui-sref="options"></button>
+            <button class="button button-icon ion-more" ng-click="popover.show($event)">
+                <span class="badge badge-assertive">3</span></ion-item>
+            </button>
         </div>
     </ion-header-bar>
     <ion-content>
@@ -42,10 +44,10 @@
 
         </div>
     </ion-content>
-    <div class="bar bar-footer bar-dark">
+    <!--<div class="bar bar-footer bar-dark">
         <div class="title" style="line-height: 120%;font-size:99%;margin-top:5px">
             Developed by
             <br> Faris | Suraj
         </div>
-    </div>
+    </div>-->
 </ion-view>

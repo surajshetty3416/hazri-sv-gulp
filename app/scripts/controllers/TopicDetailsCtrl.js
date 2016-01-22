@@ -10,21 +10,25 @@ angular.module('HazriSV')
         $scope.limit = 50;
         $ionicLoading.show();
 
-        FirebaseRef.child('attendances/' + $localstorage.get('dept')).on('value', function (snapshot) {
-            snapshot.forEach(function (childSnapshot) {
-                var data = childSnapshot.val();
-                if (data.year == $localstorage.get('year') && data.semester == $localstorage.get('sem') && data.subid == $scope.sub.id && data.type == $scope.sub.type) {
-                    if (data.type == 'th') {
+        FirebaseRef.child('attendances/' + $localstorage.get('dept')).orderByChild('subid').equalTo($scope.sub.id).once('value', function (snapshot) {
+            if ($scope.sub.type = "th") {
+                snapshot.forEach(function (childSnapshot) {
+                    var data = childSnapshot.val();
+                    if (data.type == "th") {
                         $scope.topics.push({ content: data.topic, date: data.date });
                     }
-                    if (data.type == 'pr') {
+                });
+            }
+            if ($scope.sub.type = "pr") {
+                snapshot.forEach(function (childSnapshot) {
+                    var data = childSnapshot.val();
+                    if (data.type == "pr") {
                         if (data.batchno == $scope.sub.batch) {
                             $scope.topics.push({ content: data.topic, date: data.date });
                         }
                     }
-                }
-
-            });
+                });
+            }
             $ionicLoading.hide();
         });
     });

@@ -11,57 +11,63 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                     StatusBar.styleLightContent();
                 }
             }
+
             if (window.cordova) {
                 window.plugins.OneSignal.init('e4b6d1df-1400-476d-b108-57baa5b960dc',
-                    { googleProjectNumber: '445630381429' }, NotificationRecieved);
-                window.plugins.OneSignal.enableNotificationsWhenActive(true);
+                    { googleProjectNumber: '445630381429', autoRegister: false }, NotificationRecieved);
 
+                window.plugins.OneSignal.enableNotificationsWhenActive(true);
                 var NotificationRecieved = function (jsonData) {
+
                     $localstorage.pushObj("unreadnoti", { "title": jsonData.additionalData.title, "message": jsonData.message, "date": Date() });
                     $state.go('notifications');
                 }
-
-                $rootScope.isOnline = $cordovaNetwork.isOnline();
-                $rootScope.$apply();
             }
-            else {
-                $rootScope.isOnline = true;
-            }
+            // if (window.cordova) {
+            //     $rootScope.isOnline = $cordovaNetwork.isOnline();
+            //     $rootScope.$apply();
+            // }
 
-            $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
-                $rootScope.isOnline = true;
-                console.log('online');
-                $rootScope.$apply();
-            });
+            // else {
+            //     $rootScope.isOnline = true;
+            // }
+
+            // $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
+            //     $rootScope.isOnline = true;
+            //     console.log('online');
+            //     $rootScope.$apply();
+            // });
  
-            // listen for Offline event
-            $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
-                $rootScope.isOnline = false;
-                console.log('offline');
-                $rootScope.$apply();
-            });
+            // // listen for Offline event
+            // $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
+            //     $rootScope.isOnline = false;
+            //     console.log('offline');
+            //     $rootScope.$apply();
+            // });
 
   
             // Show an alert box if a notification comes in when the user is in your app.
             //window.plugins.OneSignal.enableInAppAlertNotification(true);
+            // $rootScope.$on('loading:show', function () {
+            //     $ionicLoading.show();
+            // });
+
+            // $rootScope.$on('loading:hide', function () {
+            //     $ionicLoading.hide();
+            // });
+
+            // $rootScope.$on("$stateChangeStart", function () {
+            //     $rootScope.$broadcast('loading:show');
+            // });
+
+            // $rootScope.$on("$stateChangeSuccess", function () {
+            //     $rootScope.$broadcast('loading:hide');
+            // });
         });
 
-        // $rootScope.$on('loading:show', function () {
-        //     $ionicLoading.show();
-        // });
-
-        // $rootScope.$on('loading:hide', function () {
-        //     $ionicLoading.hide();
-        // });
-
-        // $rootScope.$on("$stateChangeStart", function () {
-        //     $rootScope.$broadcast('loading:show');
-        // });
-
-        // $rootScope.$on("$stateChangeSuccess", function () {
-        //     $rootScope.$broadcast('loading:hide');
-        // });
-
+        // document.addEventListener("click", function () {
+        //     document.getElementById("badge").style.display = "none";
+        // }); 
 
     })
 
