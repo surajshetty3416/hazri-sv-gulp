@@ -4,5 +4,16 @@
  * e.g. $positive:  #387ef5 !default;
  */
 
+
+$energized:                       #01579B !default;
+$positive:                        #0277BD !default;
+$stable:                          #f8f8f8 !default;
+$light:                           #FFFFFF !default;
+$assertive:                       #FFAB40 !default;
+$dark:                            #212121 !default;
+$calm:                            #727272 !default;
+$royal:                           #FFE57F !default;
+$balanced:                        #B6B6B6 !default;
+
 // Include all of Ionic for compilation
 @import 'bower_components/ionic/scss/ionic';

@@ -1,53 +1,39 @@
-<ion-view>
-    <ion-header-bar class="bar-balanced">
-        <h1 class="title">Hazri - Student Version</h1>
-        <div class="buttons">
-            <button class="button button-icon ion-more" ng-click="popover.show($event)">
-                <span class="badge badge-assertive">3</span></ion-item>
-            </button>
-        </div>
-    </ion-header-bar>
+<ion-view title="Hazri Student Version">
+  <ion-nav-buttons side="primary">
+    <button class="button button-icon ion-more" ng-click="popover.show($event)">
+      <!--<span class="badge badge-assertive item-note">3</span></ion-item>-->
+    </button>
+  </ion-nav-buttons>
     <ion-content>
-        <div class="wrap" style="width:auto;margin:0 auto;margin-top:20px">
-            <label class="item item-input ">
-                <span class="input-label">Enter UID</span>
-                <Input type="text" ng-model="detail.uid">
+        <div class="list">
+          <div class="item item-divider-android positive divider-fix">
+            View your attendance
+          </div>
+          <div class="item item-input-inset item-borderless uid-box">
+            <label class="item-input-wrapper">
+              <i class="icon ion-person placeholder-icon"></i>
+              <input type="text" placeholder="Enter your UID" ng-model="detail.uid">
             </label>
-            <label class="item">
-                <button class="button button-block button-balanced " ng-disabled="detail.uid == null||detail.uid == ''" ng-click="direct()">View Attendance</button>
-            </label>
-            <div class="center">OR</div>
-            <label class="item item-input item-select">
-                <span class="input-label">Department</span>
-                <select name="deparment" id="deparment" ng-model="detail.dept" ng-change="reset()">
-                    <option value="{{dept.id}}" ng-repeat="dept in detail.deptoption">{{dept.name}}</option>
-                </select>
-            </label>
-            <label class="item item-input item-select">
-                <span class="input-label">Year</span>
-                <select name="year" id="year" ng-model="detail.year" ng-change="providesemop()">
-                    <option value="fe">First Year</option>
-                    <option value="se">Second Year</option>
-                    <option value="te">Third Year</option>
-                    <option value="be">Final Year</option>
-                </select>
-            </label>
-            <label class="item item-input item-select">
-                <span class="input-label">Semester</span>
-                <select name="semester" id="semester" ng-model="detail.sem">
-                    <option ng-repeat="option in detail.semoption" value="{{option.id}}">{{option.name}}</option>
-                </select>
-            </label>
-            <label class="item">
-                <button class="button button-block button-balanced " ng-disabled="detail.sem == null" ng-click="setdata()">Let Me In</button>
-            </label>
-
+            <button class="button button-small icon ion-chevron-right button-assertive button-fix"
+                    ng-disabled="detail.uid == null || detail.uid == '' || !isOnline" ng-click="direct()">
+            </button>
+          </div>
+          <div class="item item-divider-android calm item-borderless row">
+            <span class="col-33 col-offset-33 center">OR</span>
+          </div>
+          <div class="item item-divider-android positive divider-fix item-borderless">
+            View attendance by class
+          </div>
+          <pick-list model="detail.dept" list="deptOptions" heading="'Department'"></pick-list>
+          <pick-list model="detail.year" list="yearOptions" heading="'Year'"></pick-list>
+          <pick-list model="detail.sem" list="options" heading="'Semester'"></pick-list>
+          <button class="button button-clear button-block button-positive center"
+                  ng-disabled="!detail.dept || !detail.year || !detail.sem || !isOnline"
+                  ng-click="setdata()"
+                  >Let's go</button>
         </div>
+      <div class="bar bar-footer bar-royal" ng-if="!isOnline">
+        <div class="center positive col-center">This application requires internet connection.</div>
+      </div>
     </ion-content>
-    <!--<div class="bar bar-footer bar-dark">
-        <div class="title" style="line-height: 120%;font-size:99%;margin-top:5px">
-            Developed by
-            <br> Faris | Suraj
-        </div>
-    </div>-->
 </ion-view>

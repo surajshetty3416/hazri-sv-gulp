@@ -11,7 +11,7 @@ angular.module('HazriSV')
         $ionicLoading.show();
 
         FirebaseRef.child('attendances/' + $localstorage.get('dept')).orderByChild('subid').equalTo($scope.sub.id).once('value', function (snapshot) {
-            if ($scope.sub.type = "th") {
+            if ($scope.sub.type == "th") {
                 snapshot.forEach(function (childSnapshot) {
                     var data = childSnapshot.val();
                     if (data.type == "th") {
@@ -19,7 +19,7 @@ angular.module('HazriSV')
                     }
                 });
             }
-            if ($scope.sub.type = "pr") {
+            if ($scope.sub.type == "pr") {
                 snapshot.forEach(function (childSnapshot) {
                     var data = childSnapshot.val();
                     if (data.type == "pr") {

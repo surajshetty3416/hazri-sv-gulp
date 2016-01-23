@@ -6,7 +6,7 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
                 if (ionic.Platform.isAndroid()) {
-                    StatusBar.backgroundColorByHexString("#33cd5f");
+                    StatusBar.backgroundColorByHexString("#01579B");
                 } else {
                     StatusBar.styleLightContent();
                 }
@@ -23,51 +23,36 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                     $state.go('notifications');
                 }
             }
-            // if (window.cordova) {
-            //     $rootScope.isOnline = $cordovaNetwork.isOnline();
-            //     $rootScope.$apply();
-            // }
+          /*Online check*/
+             if (window.cordova) {
+                 $rootScope.isOnline = $cordovaNetwork.isOnline();
+                 $rootScope.$apply();
+             }
+             else {
+                 $rootScope.isOnline = true;
+             }
 
-            // else {
-            //     $rootScope.isOnline = true;
-            // }
+             $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
+                 $rootScope.isOnline = true;
+                 $rootScope.$apply();
+                console.log('online');
+             });
 
-            // $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
-            //     $rootScope.isOnline = true;
-            //     console.log('online');
-            //     $rootScope.$apply();
-            // });
- 
-            // // listen for Offline event
-            // $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
-            //     $rootScope.isOnline = false;
-            //     console.log('offline');
-            //     $rootScope.$apply();
-            // });
+             // listen for Offline event
+             $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
+                 $rootScope.isOnline = false;
+                 $rootScope.$apply();
+                 console.log('offline');
+             });
 
-  
+
             // Show an alert box if a notification comes in when the user is in your app.
             //window.plugins.OneSignal.enableInAppAlertNotification(true);
-            // $rootScope.$on('loading:show', function () {
-            //     $ionicLoading.show();
-            // });
-
-            // $rootScope.$on('loading:hide', function () {
-            //     $ionicLoading.hide();
-            // });
-
-            // $rootScope.$on("$stateChangeStart", function () {
-            //     $rootScope.$broadcast('loading:show');
-            // });
-
-            // $rootScope.$on("$stateChangeSuccess", function () {
-            //     $rootScope.$broadcast('loading:hide');
-            // });
         });
 
         // document.addEventListener("click", function () {
         //     document.getElementById("badge").style.display = "none";
-        // }); 
+        // });
 
     })
 

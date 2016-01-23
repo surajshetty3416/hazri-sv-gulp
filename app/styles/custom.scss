@@ -1,10 +1,10 @@
 .wrap {
-  padding: 10px 10px 10px 10px; 
+  padding: 10px 10px 10px 10px;
   margin-bottom: 5%;
   }
-  
+
 .center {
-    text-align:center;
+    text-align: center;
     margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@
     font-size: 25px;
 }
 
-//all Popups overridden  
+//all Popups overridden
  .popup {
      border-radius: 10px !important;
  }
@@ -49,7 +49,7 @@
     position: relative;
 }
 
- //Popover   
+ //Popover
 .popover {
     height: auto !important;
 }
@@ -79,9 +79,9 @@
   height: 100%;
   background-color: #333;
   border-radius: 10px; }
-  
-  
- 
+
+
+
 //  .popup
 // .popup-head
 // .popup-title
@@ -127,3 +127,18 @@
 .fade-in-scale.ng-leave, .fade-in-scale > .ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
+
+/*Select page*/
+.item.item-divider-android.positive.divider-fix {
+  padding-bottom: 0px;
+}
+.uid-box {
+  .item-input-wrapper {
+    height: 40px;
+  }
+  .button-fix {
+    width: 40px;
+    height:40px;
+    min-height: 29px !important;
+  }
+}
