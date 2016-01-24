@@ -2,6 +2,6 @@
 
 angular.module('HazriSV')
 
-  .controller('TimetableCtrl', function($scope) {
+    .controller('TimetableCtrl', function ($scope) {
 
-  });
+    });

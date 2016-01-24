@@ -12,12 +12,14 @@ angular.module('HazriSV')
 
       if (angular.equals($localstorage.getObj('options'), {})) {
           FirebaseRef.child('departments').once('value', function (snapshot) {
+             
               snapshot.forEach(function (childSnapshot) {
                   var id = childSnapshot.key();
                   var data = childSnapshot.val();
                   options.deptOptions.push({ 'id': id, 'name': data.name });
               });
-              FirebaseRef.child('year').once('value', function (years) {
+              FirebaseRef.child('year').orderByChild('level').once('value', function (years) {
+                   console.log(years.val());
                 years = years.val();
                 for(var year in years){
                   options.yearOptions.push({id:year, name: years[year].name});

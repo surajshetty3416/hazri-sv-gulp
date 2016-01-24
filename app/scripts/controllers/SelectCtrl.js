@@ -3,7 +3,7 @@
 angular.module('HazriSV')
 
     .controller('SelectCtrl', function ($scope, $ionicModal, alertPopup, $rootScope, $ionicPopover, $ionicLoading,
-                                        $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state, $ionicPlatform, $cordovaNetwork) {
+        $localstorage, $ionicPopup, FirebaseRef, GetDepts, $state, $ionicPlatform, $cordovaNetwork) {
 
         $scope.detail = {
             dept: null,
@@ -15,29 +15,30 @@ angular.module('HazriSV')
         $scope.deptOptions = {};
         $scope.yearOptions = {};
         $scope.semOptions = {};
+        $scope.notificationNum = $localstorage.get("notificationCounter", 0);
 
         $ionicPlatform.ready(function () {
-          /*Online check*/
-          if (window.cordova) {
-            $scope.isOnline = $cordovaNetwork.isOnline();
-            $scope.$apply();
-          }
-          else {
-            $scope.isOnline = true;
-          }
+            /*Online check*/
+            if (window.cordova) {
+                $scope.isOnline = $cordovaNetwork.isOnline();
+                $scope.$apply();
+            }
+            else {
+                $scope.isOnline = true;
+            }
 
-          $scope.$on('$cordovaNetwork:online', function (event, networkState) {
-            $scope.isOnline = true;
-            $scope.$apply();
-            console.log('online');
-          });
+            $scope.$on('$cordovaNetwork:online', function (event, networkState) {
+                $scope.isOnline = true;
+                $scope.$apply();
+                console.log('online');
+            });
 
-          // listen for Offline event
-          $scope.$on('$cordovaNetwork:offline', function (event, networkState) {
-            $scope.isOnline = false;
-            $scope.$apply();
-            console.log('offline');
-          });
+            // listen for Offline event
+            $scope.$on('$cordovaNetwork:offline', function (event, networkState) {
+                $scope.isOnline = false;
+                $scope.$apply();
+                console.log('offline');
+            });
 
         });
 
@@ -58,17 +59,17 @@ angular.module('HazriSV')
 
 
         GetDepts.then(function (val) {
-          $scope.deptOptions = val.deptOptions;
-          $scope.yearOptions = val.yearOptions;
-          $scope.semOptions = val.semOptions;
-          console.log(val);
+            $scope.deptOptions = val.deptOptions;
+            $scope.yearOptions = val.yearOptions;
+            $scope.semOptions = val.semOptions;
+            console.log(val);
         });
 
         $scope.$watch('detail.year', function () {
-          $scope.detail.sem = null;
-          var key;
-          if($scope.detail.year)  key = $scope.detail.year.id;
-          $scope.options = $scope.semOptions[key];
+            $scope.detail.sem = null;
+            var key;
+            if ($scope.detail.year) key = $scope.detail.year.id;
+            $scope.options = $scope.semOptions[key];
         }, true);
 
         $scope.setdata = function () {
@@ -78,8 +79,16 @@ angular.module('HazriSV')
             $state.go('studentOptions');
         };
 
+        $scope.$on('NotificationRecieved', function () {
+            $scope.notificationNum = $localstorage.get('notificationCounter', 0);
+            $scope.$apply();
+        });
+        $scope.$on('ReadNotification', function () {
+            $scope.notificationNum = $localstorage.get('notificationCounter', 0);
+            $scope.$apply();
+        });
 
-        $scope.noti = Object.keys($localstorage.getObj('unreadnoti'));
+        //$scope.noti = Object.keys($localstorage.getObj('unreadnoti'));
         //.map(function (key) {return $localstorage.getObj('unreadnoti')[key]});
 
         $scope.direct = function () {
@@ -107,12 +116,25 @@ angular.module('HazriSV')
                 }
             });
         };
-
+        
+       // $localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date": });
+        
+        $scope.checkRegistration = function(){
+        //   window.plugins.OneSignal.getTags(function(tags){
+        //       if(tags == '{}')
+              $scope.modal.show();  
+            //   else
+            //   alertPopup('Already Registered','assertive');
+        //   });
+          
+        };
         $scope.registerData = {};
         $scope.registerData.confirm = function () {
-            $scope.modal.hide();
-            window.plugins.OneSignal.sendTags({ Department: $scope.registerData.dept, Year: $scope.registerData.year });
+            window.plugins.OneSignal.sendTags({ Name:$scope.registerData.name, Department: $scope.registerData.dept.id, Year: $scope.registerData.year.id })
             window.plugins.OneSignal.registerForPushNotifications();
+            $scope.modal.hide();
+            alertPopup('Registered Successfully','assetive');
+            
         };
 
 

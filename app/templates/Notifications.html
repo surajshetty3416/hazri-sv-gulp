@@ -1,6 +1,13 @@
 <ion-view title="Notifications">
+    <ion-nav-buttons side="primary">
+        <button class="button button-icon ion-trash-b" ng-click="clear()" ng-if="newNotification.length>0||readNotification.length>0">
+            Clear All
+        </button>
+    </ion-nav-buttons>
     <ion-content>
-        <div class="card" ng-repeat="item in items | reverse| limitTo:limit">
+        <div class="item item-divider">New Notifications</div>
+        <p class="item assertive" ng-if="newNotification.length==0">No new Notifications*</p>
+        <div class="card" ng-repeat="item in newNotification | reverse">
             <div class="item item-divider">
                 {{item.title}}
             </div>
@@ -11,10 +18,18 @@
                 {{item.date}}
             </div>
         </div>
-        <div class="center">
-            <button class="button button-clear button-balanced" ng-show="canload" ng-click="loadolder()">Load Older Notifications</button>
+        <div class="item item-divider">Older Notifications</div>
+        <p class="item balanced" ng-if="readNotification.length==0">You do not have any older Notifcations</p>
+        <div class="card" ng-repeat="item in readNotification | reverse">
+            <div class="item item-divider">
+                {{item.title}}
+            </div>
+            <div class="item item-text-wrap">
+                {{item.message}}
+            </div>
+            <div class="item item-divider right positive">
+                {{item.date | date:'medium'}}
+            </div>
         </div>
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
-        </ion-refresher>
     </ion-content>
 </ion-view>

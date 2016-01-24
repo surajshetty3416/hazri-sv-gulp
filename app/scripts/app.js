@@ -2,7 +2,7 @@
 
 angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'highcharts-ng'])
 
-    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork) {
+    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork, $filter) {
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
                 if (ionic.Platform.isAndroid()) {
@@ -12,38 +12,42 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 }
             }
 
+            var NotificationRecieved = function (jsonData) {
+                $localstorage.pushObj("unreadnoti", { "title": jsonData.additionalData.title, "message": jsonData.message, "date": $filter('date')(new Date(), 'dd-MM-yyyy') });
+                $localstorage.set("notificationCounter", $localstorage.get("notificationCounter", 0) == 0 ? 1 : (parseInt($localstorage.get("notificationCounter"))) + 1);
+                $rootScope.$broadcast('NotificationRecieved');
+                if (jsonData.additionalData) {
+                    if (jsonData.additionalData.yourUrlKey)
+                        location.href = jsonData.additionalData.yourUrlKey;
+                }
+            }
+
             if (window.cordova) {
                 window.plugins.OneSignal.init('e4b6d1df-1400-476d-b108-57baa5b960dc',
                     { googleProjectNumber: '445630381429', autoRegister: false }, NotificationRecieved);
 
-                window.plugins.OneSignal.enableNotificationsWhenActive(true);
-                var NotificationRecieved = function (jsonData) {
-
-                    $localstorage.pushObj("unreadnoti", { "title": jsonData.additionalData.title, "message": jsonData.message, "date": Date() });
-                    $state.go('notifications');
-                }
             }
-          /*Online check*/
-             if (window.cordova) {
-                 $rootScope.isOnline = $cordovaNetwork.isOnline();
-                 $rootScope.$apply();
-             }
-             else {
-                 $rootScope.isOnline = true;
-             }
+            /*Online check*/
+            if (window.cordova) {
+                $rootScope.isOnline = $cordovaNetwork.isOnline();
+                $rootScope.$apply();
+            }
+            else {
+                $rootScope.isOnline = true;
+            }
 
-             $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
-                 $rootScope.isOnline = true;
-                 $rootScope.$apply();
+            $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
+                $rootScope.isOnline = true;
+                $rootScope.$apply();
                 console.log('online');
-             });
+            });
 
-             // listen for Offline event
-             $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
-                 $rootScope.isOnline = false;
-                 $rootScope.$apply();
-                 console.log('offline');
-             });
+            // listen for Offline event
+            $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
+                $rootScope.isOnline = false;
+                $rootScope.$apply();
+                console.log('offline');
+            });
 
 
             // Show an alert box if a notification comes in when the user is in your app.
@@ -124,12 +128,12 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
 
             })
 
-            .state('options', {
-                url: '/options',
-                cache: false,
-                templateUrl: 'templates/Options.html',
-                controller: 'OptionsCtrl'
-            });
+        // .state('options', {
+        //     url: '/options',
+        //     cache: false,
+        //     templateUrl: 'templates/Options.html',
+        //     controller: 'OptionsCtrl'
+        // })
 
         $urlRouterProvider.otherwise('/select');
     });

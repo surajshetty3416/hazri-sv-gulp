@@ -8,7 +8,7 @@ angular.module('HazriSV')
         FirebaseRef.child('studentCount/' + $localstorage.get("dept")).orderByChild('year').equalTo($localstorage.get('year')).once('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
                 var data = childSnapshot.val();
-                    $scope.batoption = data.batchno;
+                $scope.batoption = data.batchno;
             });
             $ionicLoading.hide();
         });

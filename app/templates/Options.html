@@ -1,11 +1,11 @@
 <ion-popover-view>
-        <ion-content>
-          <div class="list">
-            <a class="item" ng-click="popover.hide($event); modal.show($event)">
+    <ion-content>
+        <div class="list">
+            <a class="item" ng-click="popover.hide($event); checkRegistration();">
               Register For Notification
             </a>
             <a class="item" ui-sref="notifications" ng-click="popover.hide($event)">
-              Notifications <span class="badge badge-assertive">3</span></ion-item>
+              Notifications <span class="badge badge-assertive" ng-if="notificationNum>0">{{notificationNum}}</span></ion-item>
             </a>
             <a class="item" ui-sref="#">
               About Devs
@@ -13,6 +13,6 @@
             <a class="item" ui-sref="#">
               Report Bugs
             </a>
-           </div>
-        </ion-content>
-      </ion-popover-view>
+        </div>
+    </ion-content>
+</ion-popover-view>

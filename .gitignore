@@ -6,7 +6,6 @@ platforms/
 plugins/*
 !plugins/fetch.json
 bower_components/
-
 .tmp/
 www/
 .sass-cache
