@@ -2,9 +2,7 @@
 
 angular.module('HazriSV')
 
-<<<<<<< HEAD
-    .controller('TimetableCtrl', function ($scope) {
-=======
+
   .controller('TimetableCtrl', function($scope, $ionicPlatform, $cordovaCamera, $ionicActionSheet, $ionicModal, $ionicLoading, timetableUrl, $localstorage) {
 
     $ionicLoading.show();
@@ -98,6 +96,6 @@ angular.module('HazriSV')
       $scope.modal.remove();
       console.log('destroyed');
     });
->>>>>>> origin/master
+
 
     });
