@@ -1,16 +1,20 @@
 <ion-popover-view>
     <ion-content>
         <div class="list">
-            <a class="item" ng-click="popover.hide($event); checkRegistration();">
+            <a class="item " ng-click="popover.hide($event); checkRegistration();">
+                <i class="icon ion-person-add"></i>
               Register For Notification
             </a>
-            <a class="item" ui-sref="notifications" ng-click="popover.hide($event)">
+            <a class="item " ui-sref="notifications" ng-click="popover.hide($event)">
+                <i class="icon ion-android-notifications"></i>
               Notifications <span class="badge badge-assertive" ng-if="notificationNum>0">{{notificationNum}}</span></ion-item>
             </a>
-            <a class="item" ng-click="devmodal.show()">
-              About Devs
+            <a class="item " ng-click="devmodal.show();popover.hide($event);" >
+                 <i class="icon ion-information-circled"></i>
+              About Developers
             </a>
-            <a class="item" ng-click="popover.hide($event);" ui-sref="reportbugs">
+            <a class="item " ng-click="popover.hide($event);" ui-sref="reportbugs">
+                <i class="icon ion-bug"></i>
               Report Bugs
             </a>
         </div>

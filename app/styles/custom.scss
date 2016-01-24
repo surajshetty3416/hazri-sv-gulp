@@ -151,23 +151,36 @@
 }
 
 /*Devmodal*/
-.button-google {
-  background-color: $google;
-  border-color: transparent;
-  color: #fff !important;
-  &.active, &.activated{
-    background-color: darken($google,10%);
-    color: #fff !important;
-  }
+// .button-google {
+//   background-color: $google;
+//   border-color: transparent;
+//   color: #fff !important;
+//   &.active, &.activated{
+//     background-color: darken($google,10%);
+//     color: #fff !important;
+//   }
+// }
+// .button-facebook {
+//   background-color: $facebook;
+//   border-color: transparent;
+//   color: #fff !important;
+//   &.active, &.activated{
+//     background-color: darken($facebook, 10%);
+//     color: #fff !important;
+//   }
+// }
+.links{
+    padding:5px;
+    font-size: 20px;
 }
+
+.button-google {
+    color:$google;
+
+}
+
 .button-facebook {
-  background-color: $facebook;
-  border-color: transparent;
-  color: #fff !important;
-  &.active, &.activated{
-    background-color: darken($facebook, 10%);
-    color: #fff !important;
-  }
+    color:$facebook;
 }
 
 
@@ -221,3 +234,17 @@
   color: white;
 }
 
+.devcard{
+    display:inline-block;
+    margin:10px;
+    border-radius:15px;
+    width:250px;
+    height: auto;
+    box-shadow: 6px 8px 30px -4px rgba(0,0,0,0.59);
+}
+
+.profile{
+    width:80px;
+    height:80px; 
+    border-radius:30%;
+}

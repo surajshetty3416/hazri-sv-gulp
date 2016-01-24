@@ -119,30 +119,33 @@ angular.module('HazriSV')
 
         //$localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date":'2016-08-09' });
 
-        $scope.checkRegistration = function(){
-        //   window.plugins.OneSignal.getTags(function(tags){
-        //       if(tags == '{}')
-              $scope.modal.show();
+        $scope.checkRegistration = function () {
+            //   window.plugins.OneSignal.getTags(function(tags){
+            //       if(tags == '{}')
+            $scope.modal.show();
             //   else
             //   alertPopup('Already Registered','assertive');
-        //   });
-
+            //   });
         };
         $scope.registerData = {};
         $scope.registerData.confirm = function () {
-            window.plugins.OneSignal.sendTags({ Name:$scope.registerData.name, Department: $scope.registerData.dept.id, Year: $scope.registerData.year.id })
+            window.plugins.OneSignal.sendTags({ Name: $scope.registerData.name, Department: $scope.registerData.dept.id, Year: $scope.registerData.year.id })
             window.plugins.OneSignal.registerForPushNotifications();
             $scope.modal.hide();
-            alertPopup('Registered Successfully','assetive');
+            alertPopup('Registered Successfully', 'assertive');
 
         };
 
-      $ionicModal.fromTemplateUrl('templates/DevInfo.html', function ($ionicModal) {
-        $scope.devmodal = $ionicModal;
-      }, {
-        scope: $scope,
-        animation: 'slide-in-up'
-      });
+        $ionicModal.fromTemplateUrl('templates/DevInfo.html', function ($ionicModal) {
+            $scope.devmodal = $ionicModal;
+        }, {
+                scope: $scope,
+                animation: 'slide-in-up'
+            });
+
+        $scope.goto = function (link) {
+            var ref = cordova.InAppBrowser.open(link, '_system', 'location=yes');
+        }
 
 
     });

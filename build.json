@@ -1,0 +1,11 @@
+{
+  "android": {
+    "release": {
+      "keystore": "HazriSV.keystore",
+      "storePassword": "hazrisv123",
+      "alias": "HazriSV",
+      "password" : "hazrisv123",
+      "keystoreType": ""
+    }
+  }
+}
