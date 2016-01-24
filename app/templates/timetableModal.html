@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-dark">
+    <h1 class="title">View Image</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Close</button>
+  </ion-header-bar>
+  <ion-content scroll="false" class="dark-bg">
+
+    <ion-scroll zooming="true"
+                direction="xy"
+                delegate-handle="zoom-pane"
+                class="zoom-pane"
+                min-zoom="1"
+                scrollbar-x="false"
+                scrollbar-y="false"
+                overflow-scroll="false">
+      <img ng-src="{{tt.src}}">
+    </ion-scroll>
+    <div class="date">
+      {{tt.time | date: 'dd-MM-yyyy'}}
+    </div>
+  </ion-content>
+</ion-modal-view>

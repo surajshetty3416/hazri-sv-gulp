@@ -1,8 +1,11 @@
 <ion-view title="Timetable">
   <ion-content>
-    <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 100%">
-      <div style="width: 5000px; height: 5000px; background: url('https://upload.wikimedia.org/wikipedia/commons/a/ad/Europe_geological_map-en.jpg') repeat">
-      </div>
-    </ion-scroll>
+    <div class="list">
+      <div class="item item-divider-android item-borderless">Uploaded timetables</div>
+      <div class="item" ng-repeat="tt in ttImages" ng-click="showTt(tt)">Timetable <span class="item-note">{{tt.time | date:'dd MMMM, yyyy'}}</span></div>
+    </div>
+    <div class="bar bar-footer">
+      <button class="button button-block button-assertive col-center" ng-click="actionSheet()">Upload</button>
+    </div>
   </ion-content>
 </ion-view>
