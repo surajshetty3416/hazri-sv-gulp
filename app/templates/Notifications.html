@@ -5,30 +5,27 @@
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <div class="item item-divider">New Notifications</div>
-        <p class="item assertive" ng-if="newNotification.length==0">No new Notifications*</p>
+        <div class="item item-divider-android item-borderless positive divider-fix text">New Notifications</div>
+        <p class="item item-borderless assertive" ng-if="newNotification.length==0">No new Notifications*</p>
         <div class="card" ng-repeat="item in newNotification | reverse">
-            <div class="item item-divider">
+            <div class="item item-divider light-bg">
                 {{item.title}}
+              <span class="item-note">{{item.date}}</span>
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap stable-bg">
                 {{item.message}}
-            </div>
-            <div class="item item-divider right positive">
-                {{item.date}}
             </div>
         </div>
-        <div class="item item-divider">Older Notifications</div>
-        <p class="item balanced" ng-if="readNotification.length==0">You do not have any older Notifcations</p>
+      <hr class="calm">
+        <div class="item item-divider-android item-borderless positive divider-fix text">Older Notifications</div>
+        <p class="item item-borderless balanced" ng-if="readNotification.length==0">You do not have any older Notifications</p>
         <div class="card" ng-repeat="item in readNotification | reverse">
-            <div class="item item-divider">
+            <div class="item item-divider light-bg">
                 {{item.title}}
+              <span class="item-note">{{item.date}}</span>
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap stable-bg">
                 {{item.message}}
-            </div>
-            <div class="item item-divider right positive">
-                {{item.date | date:'medium'}}
             </div>
         </div>
     </ion-content>

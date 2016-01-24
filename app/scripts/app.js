@@ -71,6 +71,12 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 controller: 'SelectCtrl'
             })
 
+            .state('reportbugs', {
+                url: '/reportbugs',
+                templateUrl: 'templates/ReportBugs.html',
+                controller: 'ReportBugCtrl'
+            })
+
             .state('studentOptions', {
                 url: '/studentoptions',
                 cache: false,
@@ -127,13 +133,6 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 controller: 'AttendanceDetailsCtrl'
 
             })
-
-        // .state('options', {
-        //     url: '/options',
-        //     cache: false,
-        //     templateUrl: 'templates/Options.html',
-        //     controller: 'OptionsCtrl'
-        // })
 
         $urlRouterProvider.otherwise('/select');
     });

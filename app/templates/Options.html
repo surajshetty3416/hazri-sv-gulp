@@ -7,10 +7,10 @@
             <a class="item" ui-sref="notifications" ng-click="popover.hide($event)">
               Notifications <span class="badge badge-assertive" ng-if="notificationNum>0">{{notificationNum}}</span></ion-item>
             </a>
-            <a class="item" ui-sref="#">
+            <a class="item" ng-click="devmodal.show()">
               About Devs
             </a>
-            <a class="item" ui-sref="#">
+            <a class="item" ng-click="popover.hide($event);" ui-sref="reportbugs">
               Report Bugs
             </a>
         </div>

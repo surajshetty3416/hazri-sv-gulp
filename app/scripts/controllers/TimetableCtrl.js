@@ -3,17 +3,18 @@
 angular.module('HazriSV')
 
 
-  .controller('TimetableCtrl', function($scope, $ionicPlatform, $cordovaCamera, $ionicActionSheet, $ionicModal, $ionicLoading, timetableUrl, $localstorage) {
+  .controller('TimetableCtrl', function($scope, $ionicPlatform, $cordovaCamera, $ionicActionSheet, $ionicModal, $ionicLoading, SVUrl, $localstorage) {
 
     $ionicLoading.show();
-    var tref = new Firebase(timetableUrl);
+    var tref = new Firebase(SVUrl);
+    tref = tref.child('timetables');
     $scope.ttImages = [];
     tref.orderByChild('dept').equalTo($localstorage.get('dept')).once('value', function (snapshot) {
       var timetables = snapshot.val();
       for(var t in timetables){
         if(timetables[t].year == $localstorage.get('year') && timetables[t].sem == $localstorage.get('sem')){
           $scope.ttImages.push({
-            src: timetables[t].img,
+            key: t,
             time: timetables[t].timestamp
           })
         }
@@ -87,8 +88,14 @@ angular.module('HazriSV')
     });
 
     $scope.showTt = function (timetable) {
+      $ionicLoading.show();
+
       $scope.tt = timetable;
-      $scope.modal.show();
+      tref.child(timetable.key+'/img').once('value', function (snapshot) {
+        $scope.tt.src = snapshot.val();
+        $ionicLoading.hide();
+        $scope.modal.show();
+      });
 
     }
 

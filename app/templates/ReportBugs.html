@@ -1,0 +1,19 @@
+<ion-view title="Report Bugs">
+    <ion-content class="padding">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Name</span>
+            <input type="text" ng-model="user.name">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Bug description</span>
+            <textarea rows="4" type="text" ng-model="user.text"></textarea>
+          </label>
+          <div class="row padding-top">
+            <button class="button button-small button-assertive col-33 col-offset-33" ng-click="send(user)">
+              Send
+            </button>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

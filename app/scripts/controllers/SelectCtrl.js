@@ -116,17 +116,17 @@ angular.module('HazriSV')
                 }
             });
         };
-        
-       // $localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date": });
-        
+
+        //$localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date":'2016-08-09' });
+
         $scope.checkRegistration = function(){
         //   window.plugins.OneSignal.getTags(function(tags){
         //       if(tags == '{}')
-              $scope.modal.show();  
+              $scope.modal.show();
             //   else
             //   alertPopup('Already Registered','assertive');
         //   });
-          
+
         };
         $scope.registerData = {};
         $scope.registerData.confirm = function () {
@@ -134,8 +134,15 @@ angular.module('HazriSV')
             window.plugins.OneSignal.registerForPushNotifications();
             $scope.modal.hide();
             alertPopup('Registered Successfully','assetive');
-            
+
         };
+
+      $ionicModal.fromTemplateUrl('templates/DevInfo.html', function ($ionicModal) {
+        $scope.devmodal = $ionicModal;
+      }, {
+        scope: $scope,
+        animation: 'slide-in-up'
+      });
 
 
     });

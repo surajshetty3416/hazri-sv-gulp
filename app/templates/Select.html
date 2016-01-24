@@ -4,35 +4,35 @@
             <span class="badge badge-assertive" ng-if="notificationNum>0">{{notificationNum}}</span>
         </button>
     </ion-nav-buttons>
-    <ion-content>
-        <div class="list">
-            <div class="item item-divider-android positive divider-fix text">
-                View attendance by UID
-            </div>
-            <div class="item item-input-inset item-borderless uid-box">
-                <label class="item-input-wrapper">
-                    <i class="icon ion-person placeholder-icon"></i>
-                    <input type="text" placeholder="Enter your UID" ng-model="detail.uid">
-                </label>
-                <button class="button button-small icon ion-chevron-right button-assertive button-fix" ng-disabled="detail.uid == null || detail.uid == '' || !isOnline"
-                ng-click="direct()">
-                </button>
-            </div>
-            <div class="item item-divider-android calm item-borderless row">
-                <span class="col-33 col-offset-33 center text">OR</span>
-            </div>
-            <div class="item item-divider-android positive divider-fix item-borderless text">
-                View attendance by class
-            </div>
-            <div class="wrap">
+    <ion-content class="has-header">
+      <div class="list">
 
-                <pick-list model="detail.dept" list="deptOptions" heading="'Department'"></pick-list>
-                <pick-list model="detail.year" list="yearOptions" heading="'Year'"></pick-list>
-                <pick-list model="detail.sem" list="options" heading="'Semester'"></pick-list>
-                <button class="button button-clear button-block button-positive center" ng-disabled="!detail.dept || !detail.year || !detail.sem || !isOnline"
-                ng-click="setdata()">Let's go</button>
-            </div>
-        </div>
+          <div class="item item-divider-android item-borderless positive divider-fix text">
+            View attendance by UID
+          </div>
+          <div class="item item-input-inset item-borderless uid-box">
+            <label class="item-input-wrapper">
+              <i class="icon ion-person placeholder-icon"></i>
+              <input type="text" placeholder="Enter your UID" ng-model="detail.uid">
+            </label>
+            <button class="button button-small icon ion-chevron-right button-assertive button-fix" ng-disabled="detail.uid == null || detail.uid == '' || !isOnline"
+                    ng-click="direct()">
+            </button>
+          </div>
+          <div class="item item-divider-android calm item-borderless row">
+            <span class="col-33 col-offset-33 center text">OR</span>
+          </div>
+          <div class="item item-divider-android positive divider-fix item-borderless text">
+            View attendance by class
+          </div>
+
+          <pick-list model="detail.dept" list="deptOptions" heading="'Department'"></pick-list>
+          <pick-list model="detail.year" list="yearOptions" heading="'Year'"></pick-list>
+          <pick-list model="detail.sem" list="options" heading="'Semester'"></pick-list>
+          <button class="button button-clear button-block button-positive center" ng-disabled="!detail.dept || !detail.year || !detail.sem || !isOnline"
+                  ng-click="setdata()">Let's go</button>
+
+      </div>
         <div class="bar bar-footer bar-royal" ng-if="!isOnline">
             <div class="center positive col-center">This application requires internet connection.</div>
         </div>

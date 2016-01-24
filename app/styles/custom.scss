@@ -134,21 +134,42 @@
 }
 .uid-box {
   .item-input-wrapper {
-    height: 60px;
-    font-size: 40px;
+    height: 40px;
+    font-size: 14px;
   }
   .button-fix {
-    width: 80px;
-    height:60px;
+    width: 40px;
+    height:40px;
     min-height: 29px !important;
   }
 }
 
 .text
 {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
 }
+
+/*Devmodal*/
+.button-google {
+  background-color: $google;
+  border-color: transparent;
+  color: #fff !important;
+  &.active, &.activated{
+    background-color: darken($google,10%);
+    color: #fff !important;
+  }
+}
+.button-facebook {
+  background-color: $facebook;
+  border-color: transparent;
+  color: #fff !important;
+  &.active, &.activated{
+    background-color: darken($facebook, 10%);
+    color: #fff !important;
+  }
+}
+
 
 /*Timetable modal*/
 .zoom-pane {
