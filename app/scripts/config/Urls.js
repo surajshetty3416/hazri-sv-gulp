@@ -4,5 +4,5 @@ angular.module('HazriSV')
 
   // development
   .constant('FirebaseUrl', 'https://hazri.firebaseio.com')
-  .constant('apiUrl','http://bvcoeportal.orgfree.com/api/student_att_calc.php/')
+  .constant('apiUrl','https://hazri.herokuapp.com/api/')
   .constant('SVUrl','https://hazrisv.firebaseio.com');

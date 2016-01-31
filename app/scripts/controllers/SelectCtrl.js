@@ -94,27 +94,48 @@ angular.module('HazriSV')
         $scope.direct = function () {
             $ionicLoading.show();
             var match = false;
-            FirebaseRef.child('students').on('value', function (snapshot) {
-                snapshot.forEach(function (depts) {
-                    depts.forEach(function (uid) {
-                        if ($scope.detail.uid.toUpperCase() === uid.key()) {
-                            match = true;
-                            $localstorage.set('dept', depts.key());
-                            $localstorage.set('year', uid.val().year);
-                            $localstorage.set('sem', uid.val().year == 'be' ? '8' : uid.val().year == 'te' ? '6' : uid.val().year == 'se' ? '4' : '2');
-                            $localstorage.set('rollno', uid.val().rollno);
-                            $localstorage.set('uid', $scope.detail.uid.toUpperCase());
-                        }
-                    });
-                });
+            var uid = $scope.detail.uid.toUpperCase();
+            var counter = 0;
+            $scope.deptOptions.forEach(function (value) {
+                FirebaseRef.child('students/' + value.id + '/' + uid).once('value', function (data) {
+                    if (data.exists()) {
+                        match = true;
+                        console.log('in');
+                        $localstorage.set('dept', value.id);
+                        $localstorage.set('year', data.val().year);
+                        $localstorage.set('sem', data.val().year == 'be' ? '8' : data.val().year == 'te' ? '6' : data.val().year == 'se' ? '4' : '2');
+                        $localstorage.set('rollno', data.val().rollno);
+                        $localstorage.set('uid', uid);
+                    }
+                    counter++;
+                    if (counter === $scope.deptOptions.length)
+                        done();
+                })
+            });
+            var done = function () {
                 if (match)
                     $state.go('attDetails');
                 else {
                     $ionicLoading.hide();
-                    alertPopup('Invalid UID', 'assertive').then(function () {
-                    });
+                    alertPopup('Invalid UID', 'assertive')
                 }
-            });
+            }     
+                
+            
+            // FirebaseRef.child('students').on('value', function (snapshot) {
+            //     snapshot.forEach(function (depts) {
+            //         depts.forEach(function (uid) {
+            //             if ($scope.detail.uid.toUpperCase() === uid.key()) {
+            //                 match = true;
+            //                 $localstorage.set('dept', depts.key());
+            //                 $localstorage.set('year', uid.val().year);
+            //                 $localstorage.set('sem', uid.val().year == 'be' ? '8' : uid.val().year == 'te' ? '6' : uid.val().year == 'se' ? '4' : '2');
+            //                 $localstorage.set('rollno', uid.val().rollno);
+            //                 $localstorage.set('uid', $scope.detail.uid.toUpperCase());
+            //             }
+            //         });
+            //     });
+            // });
         };
 
         //$localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date":'2016-08-09' });
