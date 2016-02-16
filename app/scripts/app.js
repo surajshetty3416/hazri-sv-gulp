@@ -81,8 +81,8 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
 
             .state('studentOptions', {
                 url: '/studentoptions',
-                cache: false,
-                templateUrl: 'templates/StudentOptions.html'
+                templateUrl: 'templates/StudentOptions.html',
+                controller: 'StudentOptionsCtrl'
             })
 
             .state('nameList', {
@@ -113,13 +113,13 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 controller: 'BatchOptionCtrl'
             })
 
-            .state('timetable', {
-                url: '/timetable',
-                cache: false,
-                templateUrl: 'templates/Timetable.html',
-                controller: 'TimetableCtrl'
+            // .state('timetable', {
+            //     url: '/timetable',
+            //     cache: false,
+            //     templateUrl: 'templates/Timetable.html',
+            //     controller: 'TimetableCtrl'
 
-            })
+            // })
 
             .state('notifications', {
                 url: '/notifications',

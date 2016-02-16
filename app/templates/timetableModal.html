@@ -13,10 +13,11 @@
                 scrollbar-x="false"
                 scrollbar-y="false"
                 overflow-scroll="false">
-      <img ng-src="{{tt.src}}">
+      <img ng-src="{{ttImage.src}}" ng-show="ttImage.src">
+      <p ng-hide="ttImage.src" class="assertive padding">No TimeTables are uploaded for your class</p>
     </ion-scroll>
     <div class="date">
-      {{tt.time | date: 'dd-MM-yyyy'}}
+      Uploaded on {{ttImage.time | date: 'dd-MM-yyyy'}}
     </div>
   </ion-content>
 </ion-modal-view>
