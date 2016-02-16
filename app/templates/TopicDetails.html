@@ -2,14 +2,18 @@
     <ion-content class="padding">
         <div class="list">
             <div class="item item-divider">{{sub.name}} ({{sub.type=='th'? 'Theory' : 'Practical' }})</div>
-            <div class="card" ng-repeat="topic in topics | orderBy:'date' |reverse | limitTo:limit | filter: {content:'!!'} " ng-if="topic.content!=''">
-                <div class="item item-text-wrap">
-                    {{topic.content}}
-                </div>
+            <div class="card"  ng-repeat="topic in topics | orderBy:'date' |reverse | limitTo:limit | filter: {content:'!!'} " ng-if="topic.content!=''" on-hold="googleIt(topic.content+' in '+sub.name)">
+                <div class="item item-text-wrap ">
+                    <div class="col-80">
+                    {{topic.content}} 
+                    </div>
+                    <a ng-click="googleIt((topic.content+' in '+sub.name))" class="badge "><i class="icon ion-social-google button-google"></i></a>
+                </div> 
                 <div class="item item-divider right balanced">
                     {{topic.date | date:'dd-MM-yyyy'}}
                 </div>
             </div>
+            <!--<ion-infinite-scroll ng-if="!noItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>-->
         </div>
     </ion-content>
 </ion-view>

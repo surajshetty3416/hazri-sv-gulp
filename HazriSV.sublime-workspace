@@ -1,0 +1,876 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"exe"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"ut",
+				"util.puts();"
+			],
+			[
+				"array_",
+				"array_push"
+			],
+			[
+				"attData",
+				"attDataPr"
+			],
+			[
+				"attDa",
+				"attDataTh"
+			],
+			[
+				"notification",
+				"notificationbody"
+			],
+			[
+				"curl_u",
+				"curl_user"
+			],
+			[
+				"cu",
+				"curl_array"
+			],
+			[
+				"dept",
+				"deptoption"
+			],
+			[
+				"dep",
+				"deptoption"
+			],
+			[
+				"data",
+				"dataObj"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"att",
+				"attendances"
+			],
+			[
+				"fo",
+				"forEach"
+			],
+			[
+				"va",
+				"value	Attr"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"t",
+				"tabledata"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"fi",
+				"filterdate"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"da",
+				"datepicker"
+			],
+			[
+				"ng",
+				"ng-change	AngularJS"
+			],
+			[
+				"ma",
+				"materialize"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"a",
+				"app"
+			],
+			[
+				"co",
+				"controller	AngularJS"
+			],
+			[
+				"Su",
+				"Subject"
+			],
+			[
+				"chk",
+				"chkbox"
+			],
+			[
+				"sel",
+				"selected	Attr"
+			],
+			[
+				"di",
+				"disabled	Attr"
+			],
+			[
+				"e",
+				"echo	echo \"…\""
+			],
+			[
+				"array_p",
+				"array_push"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"tr",
+				"trim"
+			],
+			[
+				"notif",
+				"Notification"
+			],
+			[
+				"ch",
+				"checked"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"mysqli_",
+				"mysqli_connect"
+			],
+			[
+				"wa",
+				"waves-effect"
+			],
+			[
+				"center",
+				"center-align"
+			],
+			[
+				"div",
+				"Division"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"fai",
+				"failedcheck"
+			],
+			[
+				"se",
+				"session_start"
+			],
+			[
+				"pos",
+				"_POST"
+			],
+			[
+				"ob",
+				"objPHPExcel"
+			],
+			[
+				"bat",
+				"Batch"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"strto",
+				"strtoupper"
+			],
+			[
+				"hig",
+				"highestRow"
+			],
+			[
+				"uc",
+				"ucwords"
+			],
+			[
+				"stude",
+				"studentdetail"
+			],
+			[
+				"file",
+				"fileType"
+			],
+			[
+				"batch",
+				"batchno"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"sho",
+				"showBatch"
+			],
+			[
+				"on",
+				"onchange	Attr"
+			],
+			[
+				"row",
+				"rowCount"
+			],
+			[
+				"ta",
+				"tableID"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"student",
+				"studentCount"
+			],
+			[
+				"DEFAULT_",
+				"DEFAULT_PATH"
+			],
+			[
+				"he",
+				"header	<header>"
+			],
+			[
+				"left",
+				"margin-left"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"ja",
+				"JavaScript"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"fire",
+				"firebase"
+			],
+			[
+				"include",
+				"include_once"
+			],
+			[
+				"require",
+				"get_required_files"
+			],
+			[
+				"session_d",
+				"session_destroy"
+			],
+			[
+				"sess",
+				"session_unset"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"mysqli",
+				"mysqli_query"
+			],
+			[
+				"db",
+				"dbuser"
+			],
+			[
+				"my",
+				"mysql_select_db"
+			],
+			[
+				"mysql_f",
+				"mysql_fetch_assoc"
+			],
+			[
+				"mysql_n",
+				"mysql_num_rows"
+			],
+			[
+				"mys",
+				"mysql_connect"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"o",
+				"orgfree"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"d",
+				"div	Tag"
+			],
+			[
+				"h",
+				"highestRow"
+			],
+			[
+				"stu",
+				"studentCount"
+			],
+			[
+				"uplo",
+				"uploadedStatus"
+			],
+			[
+				"highest",
+				"highestColumm"
+			],
+			[
+				"up",
+				"uploadedStatus"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"fun",
+				"fun	function …"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"pre",
+				"preg_match"
+			],
+			[
+				"re",
+				"register"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"op",
+				"opacity"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: pl",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: sftp",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"paka",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 133.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"gulp",
+			"open",
+			"open cmd",
+			"open cme",
+			"cmd",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Hazri/hazrisvnew",
+		"/D/Hazri/hazrisvnew/app",
+		"/D/Hazri/hazrisvnew/platforms"
+	],
+	"file_history":
+	[
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/gulp.sublime-build",
+		"/D/Hazri/hazrisvnew/app/templates/Select.html",
+		"/D/Hazri/hazrisvnew/app/templates/TopicDetails.html",
+		"/D/Hazri/hazrisvnew/platforms/android/assets/www/plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+		"/D/Hazri/hazrisvnew/node_modules/cordova-lib/src/cordova/lazy_load.js",
+		"/D/Hazri/hazrisvnew/H.sublime-project",
+		"/D/Hazri/hazrisvnew/.tmp/styles/main.css",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Terminal/Terminal.py",
+		"/D/Hazri/hazrisvnew/.gitignore",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Hazri-SV.sublime-project",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/D/Hazri/hazrisvnew/app/scripts/controllers/SelectCtrl.js",
+		"/D/Hazri/hazrisvnew/app/templates/AttendanceDetails.html",
+		"/D/Hazri/hazrisvnew/app/index.html",
+		"/D/Hazri/hazrisvnew/app/scripts/controllers/SubListCtrl.js",
+		"/D/Hazri/hazrisvnew/app/scripts/controllers/TimetableCtrl.js",
+		"/D/Hazri/hazrisvnew/app/scripts/controllers/TopicDetailsCtrl.js",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Terminal/Default (Windows).sublime-keymap",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Terminal (Windows).sublime-settings",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Terminal.sublime-settings",
+		"/D/Hazri/hazrisvnew/app/scripts/controllers/BatchOptionCtrl.js",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Suraj/AppData/Roaming/Sublime Text 3/Packages/CMD/Context.sublime-menu",
+		"/C/Users/Suraj/AppData/Roaming/Sublime Text 3/Packages/CMD/cmd.py",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Nodejs/Nodejs.sublime-settings",
+		"/d/hazri/dataentry/notification/index.php",
+		"/d/hazri/Hazri-SV/scss/index.scss",
+		"/c/Users/Suraj/Documents/ftp/login/index.php",
+		"/c/Users/Suraj/Documents/ftp/mainform/index.php",
+		"/c/Users/Suraj/Documents/ftp/defaulters/index.php",
+		"/c/Users/Suraj/Documents/ftp/mainform/form2.php",
+		"/c/Users/Suraj/Documents/ftp/mainform/form3.php",
+		"/c/Users/Suraj/Documents/ftp/mainform/form1.php",
+		"/c/Users/Suraj/Documents/ftp/mainform/finalcheck.php",
+		"/c/Users/Suraj/Documents/ftp/includefiles/firebasedependencies.php",
+		"/c/Users/Suraj/Documents/ftp/includefiles/scripts.php",
+		"/c/Users/Suraj/Documents/ftp/includefiles/footer.php",
+		"/c/Program Files/XAMPP/htdocs/editable_db/start",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/AngularJS-sublime-package.sublime-settings",
+		"/C/Users/Suraj/Documents/ftp/defaulters/getjson.php",
+		"/D/hazri/teacher/platforms/platforms.json",
+		"/d/hazri/Hazri-SV/config.xml",
+		"/d/hazri/Hazri-SV/platforms/android/AndroidManifest.xml",
+		"/d/hazri/teacher/www/scripts/controllers.js",
+		"/D/hazri/teacher/www/scripts/index.js",
+		"/C/Users/Suraj/Documents/ftp/defaulters/view_html.php",
+		"/C/Users/Suraj/Documents/ftp/login/index.php",
+		"/C/Users/Suraj/Documents/ftp/mainform/form1.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/login/index.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/css/style.css",
+		"/E/download/cd future/Framework7-1.3.1/Framework7-1.3.1/kitchen-sink-ios/infinite-scroll-load.php",
+		"/C/Users/Suraj/Documents/ftp/css/style.css",
+		"/C/TurboC4/TC/BIN/FIRE.C",
+		"/C/Users/Suraj/Documents/ftp/ftpsync.settings",
+		"/C/Users/Suraj/Documents/ftp/includefiles/scripts.php",
+		"/E/download/cd future/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/material-click.css",
+		"/E/download/cd future/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/material-click.js",
+		"/E/download/cd future/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/Create-Material-Ripple-Click-Effects-using-jQuery-CSS3/index.html",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/mainform/index.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/index.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/includefiles/scripts.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/sms.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/defaulter/download.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/defaulter/list.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/defaulter/view.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/img/bg.jpg",
+		"/C/Users/Suraj/Documents/bvcoe-dms/defaulter/sms.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/index.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/include/head.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/include/nav.php",
+		"/C/Users/Suraj/Documents/bvcoe-dms/ftpsync.settings",
+		"/C/Program Files/XAMPP/htdocs/erp/css/style.css",
+		"/C/Program Files/XAMPP/htdocs/erp/login/index.php",
+		"/C/Program Files/XAMPP/htdocs/erp/index.php",
+		"/C/Program Files/XAMPP/htdocs/erp/include/head.php",
+		"/C/Program Files/XAMPP/htdocs/erp/include/nav.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/view.php",
+		"/C/Program Files/XAMPP/htdocs/erp/include/foot.php",
+		"/E/download/cd future/HTTP-API-PHP-Sample/HTTP API (PHP Sample)/sendsms.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/download.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/list.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/index.php",
+		"/C/Program Files/XAMPP/htdocs/sqlinjection/login.php",
+		"/C/Program Files/XAMPP/htdocs/sqlinjection/index.php",
+		"/C/Program Files/XAMPP/htdocs/sqlinjection/register.php",
+		"/I/sqlinjection/sqlinjection/index.php",
+		"/I/sqlinjection/sqlinjection/register.php",
+		"/I/sqlinjection/sqlinjection/login.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/retain.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/upload.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/mainform/retain.php",
+		"/C/Program Files/XAMPP/htdocs/erp/defaulter/logout.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/view_html.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/getjson.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/generate_excel.php",
+		"/C/Program Files/XAMPP/htdocs/erp/js/index.js",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/download_defaulter.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/defaulters/sendsms.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/index.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/css/style.css",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/mainform/finalcheck.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/login/index.php",
+		"/C/Users/Suraj/Documents/ftp/newhazrimaterial/mainform/form1.php",
+		"/C/Users/Suraj/Documents/ftp/hazrimaterial/index.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/enterdata.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/firebasedependencies.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/extphp.php",
+		"/C/Users/Suraj/Documents/ftp/hazrimaterial/footer.php",
+		"/C/Users/Suraj/Documents/ftp/hazrimaterial/teachers_login.php",
+		"/C/Users/Suraj/Documents/ftp/hazrimaterial/head.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/subject_input.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/head.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/extphp2.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/download_defaulter.php",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/FTPSync.sublime-settings",
+		"/C/Program Files/Sublime Text 3/Data/Packages/FTPSync/FTPSync.sublime-settings",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/index.css",
+		"/C/Users/Suraj/Documents/ftp/css/cover.css",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/bootstrap/js/npm.js",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/bootstrap/js/jquery.min.js",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/teachers_login.php",
+		"/C/Users/Suraj/Documents/ftp/hero.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/index.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/logout.php",
+		"/C/Users/Suraj/Documents/ftp/hazridefaulter/vendor/composer/autoload_classmap.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\"",
+			"==",
+			"\"",
+			"==",
+			"\"",
+			"//",
+			"\");\n",
+			"name",
+			"width",
+			"tr",
+			"width",
+			"$batch",
+			"ch",
+			"+rowCount+",
+			"selectedOptions",
+			"offset-s4 s4 ",
+			"(bootloader)",
+			"wave",
+			"erp",
+			"js",
+			"echo",
+			"sms",
+			">\n",
+			"defaulter",
+			"echo",
+			"$batch",
+			"batchno",
+			"batchinfo",
+			"mode",
+			"\" ",
+			"form-group",
+			"showsem",
+			"epic",
+			"TargetPracticeGame",
+			"	$",
+			"          <",
+			"	<section class=\"main col-lg-8\"></section>\n",
+			"class",
+			"section"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"===",
+			"'",
+			"===",
+			"'",
+			"+(rowCount-1)+",
+			"$scope.detail",
+			"offset-s2 s8",
+			"legend"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 241.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "HazriSV.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"app\\scripts\\controllers\\TimetableCtrl.js"
+			],
+			[
+				"att",
+				"app\\templates\\AttendanceDetails.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\Hazri\\NewHazri\\hazri-attendr\\Hazri.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 186.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

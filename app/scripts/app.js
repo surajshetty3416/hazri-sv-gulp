@@ -2,7 +2,7 @@
 
 angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'highcharts-ng'])
 
-    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork, $filter) {
+    .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork, $filter , $ionicHistory) {
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
                 if (ionic.Platform.isAndroid()) {
@@ -49,7 +49,9 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 console.log('offline');
             });
 
-
+            $rootScope.goBack = function() {
+                $ionicHistory.goBack();
+            };
             // Show an alert box if a notification comes in when the user is in your app.
             //window.plugins.OneSignal.enableInAppAlertNotification(true);
         });
@@ -85,14 +87,14 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
 
             .state('nameList', {
                 url: '/namelist',
-                cache: false,
+                // cache: false,
                 templateUrl: 'templates/NameList.html',
                 controller: 'NameListCtrl'
             })
 
             .state('subList', {
                 url: '/sublist',
-                cache: false,
+                // cache: false,
                 templateUrl: 'templates/SubList.html',
                 controller: 'SubListCtrl'
             })
@@ -106,7 +108,7 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
 
             .state('batchOption', {
                 url: '/batchoption',
-                cache: false,
+                // cache: false,
                 templateUrl: 'templates/BatchOption.html',
                 controller: 'BatchOptionCtrl'
             })

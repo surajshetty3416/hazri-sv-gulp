@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "author": "Faris And Suraj <s3.netchamp@gmail.com>",
   "description": "",
-  "dependencies": {
-    "gulp-jshint": "^2.0.0",
-    "ionic-platform-web-client": "^0.2.1",
-    "jshint": "^2.8.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "clean-css": "^3.4.9",
+    "gulp-jshint": "^2.0.0",
+    "imagemin": "^4.0.0",
+    "ionic-platform-web-client": "^0.2.1",
+    "jshint": "^2.8.0",
     "beepbeep": "^1.2.0",
     "connect-livereload": "^0.5.2",
     "del": "^2.2.0",
@@ -24,7 +25,6 @@
     "gulp-iconfont-css": "2.0.0",
     "gulp-if": "^2.0.0",
     "gulp-inject": "^3.0.0",
-    "gulp-jshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.1.0",
     "gulp-ng-annotate": "^1.1.0",
@@ -55,13 +55,13 @@
   "cordovaPlugins": [
     "onesignal-cordova-plugin",
     "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-network-information",
-    "cordova-plugin-camera"
+    "cordova-plugin-vibration",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [
-    "ios",
     "android"
   ]
 }

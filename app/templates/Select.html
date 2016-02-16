@@ -10,15 +10,17 @@
           <div class="item item-divider-android item-borderless positive divider-fix text">
             View attendance by UID
           </div>
+          <form>
           <div class="item item-input-inset item-borderless uid-box">
             <label class="item-input-wrapper">
               <i class="icon ion-person placeholder-icon"></i>
-              <input type="text" placeholder="Enter your UID" ng-model="detail.uid">
+              <input type="text" placeholder="Enter your UID" ng-model="detail.uid" autocomplete="on" >
             </label>
-            <button class="button button-small icon ion-chevron-right button-assertive button-fix" ng-disabled="detail.uid == null || detail.uid == '' || !isOnline"
+            <button type="submit" class="button button-small icon ion-chevron-right button-assertive button-fix" ng-disabled="detail.uid == null || detail.uid == '' || !isOnline"
                     ng-click="direct()">
             </button>
           </div>
+          </form>
           <div class="item item-divider-android calm item-borderless row">
             <span class="col-33 col-offset-33 center text">OR</span>
           </div>

@@ -15,7 +15,7 @@ angular.module('HazriSV')
         $scope.deptOptions = {};
         $scope.yearOptions = {};
         $scope.semOptions = {};
-        $scope.notificationNum = $localstorage.get("notificationCounter", 0);
+        $scope.notificationNum = $localstorage.get('notificationCounter', 0);
 
         $ionicPlatform.ready(function () {
             /*Online check*/
@@ -45,7 +45,7 @@ angular.module('HazriSV')
         //Registration Modal
         $ionicModal.fromTemplateUrl('templates/RegisterForNotification.html', {
             scope: $scope,
-            animation: "fade-in-scale"
+            animation: 'fade-in-scale'
         }).then(function (modal) {
             $scope.modal = modal;
         });
@@ -103,7 +103,7 @@ angular.module('HazriSV')
                         console.log('in');
                         $localstorage.set('dept', value.id);
                         $localstorage.set('year', data.val().year);
-                        $localstorage.set('sem', data.val().year == 'be' ? '8' : data.val().year == 'te' ? '6' : data.val().year == 'se' ? '4' : '2');
+                        $localstorage.set('sem', data.val().year === 'be' ? '8' : data.val().year === 'te' ? '6' : data.val().year === 'se' ? '4' : '2');
                         $localstorage.set('rollno', data.val().rollno);
                         $localstorage.set('uid', uid);
                     }
@@ -138,7 +138,7 @@ angular.module('HazriSV')
             // });
         };
 
-        //$localstorage.pushObj("unreadnoti", { "title": "sadjfhkjasdfas", "message": "sadjkaskd", "date":'2016-08-09' });
+        //$localstorage.pushObj('unreadnoti', { 'title': 'sadjfhkjasdfas', 'message': 'sadjkaskd', 'date':'2016-08-09' });
 
         $scope.checkRegistration = function () {
             //   window.plugins.OneSignal.getTags(function(tags){
@@ -150,7 +150,7 @@ angular.module('HazriSV')
         };
         $scope.registerData = {};
         $scope.registerData.confirm = function () {
-            window.plugins.OneSignal.sendTags({ Name: $scope.registerData.name, Department: $scope.registerData.dept.id, Year: $scope.registerData.year.id })
+            window.plugins.OneSignal.sendTags({ Name: $scope.registerData.name, Department: $scope.registerData.dept.id, Year: $scope.registerData.year.id });
             window.plugins.OneSignal.registerForPushNotifications();
             $scope.modal.hide();
             alertPopup('Registered Successfully', 'assertive');
@@ -165,8 +165,8 @@ angular.module('HazriSV')
             });
 
         $scope.goto = function (link) {
-            var ref = cordova.InAppBrowser.open(link, '_system', 'location=yes');
-        }
+            cordova.InAppBrowser.open(link, '_system', 'location=yes');
+        };
 
 
     });

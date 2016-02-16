@@ -2,13 +2,13 @@
 
 angular.module('HazriSV')
 
-    .controller('AttendanceDetailsCtrl', function ($scope, $ionicLoading, $http, $localstorage, apiUrl) {
+    .controller('AttendanceDetailsCtrl', function ($scope, $ionicHistory, $ionicLoading, $http, $localstorage, apiUrl, alertPopup) {
         $scope.per = {
             totper: null,
             prper: null,
             thper: null
         };
-
+        $scope.done = false;
         $ionicLoading.show();
         $scope.getdata = function () {
             $scope.data = [];
@@ -52,17 +52,28 @@ angular.module('HazriSV')
                     $scope.per.totper = (attatt + atpatt + $scope.data.extra) / (tottatt + totpatt) * 100;
 
                 }, function errorCallback(response) {
-                    // console.log(response);
-
+                    alertPopup('No Internet Connection', 'assertive');
+                    $ionicHistory.goBack();
                 }).finally(function () {
-                    $ionicLoading.hide();
+
                     $scope.theory = {
                         options: {
+                            exporting: { enabled: false },
+                            credits: { enabled: false },
                             chart: {
                                 type: 'column'
                             },
                             plotOptions: {
                                 column: {
+                                    dataLabels: {
+                                        enabled: true,
+                                        color:"grey",
+                                        y:25,
+                                        x:-2
+                                    },
+                                    animation: {
+                                        duration: 500
+                                    },
                                     grouping: false,
                                     shadow: false,
                                     borderWidth: 0
@@ -78,8 +89,13 @@ angular.module('HazriSV')
                         },
                         yAxis: {
                             min: 0,
+                            //tickInterval: 2,
                             title: {
                                 text: 'No. of Lectures'
+                            },
+                            labels:
+                            {
+                                enabled: false
                             },
                             allowDecimals: false
                         },
@@ -100,11 +116,22 @@ angular.module('HazriSV')
                     };
                     $scope.practical = {
                         options: {
+                            exporting: { enabled: false },
+                            credits: { enabled: false },
                             chart: {
                                 type: 'column'
                             },
                             plotOptions: {
                                 column: {
+                                    dataLabels: {
+                                        enabled: true,
+                                        color:"grey",
+                                        y:25,
+                                        x:-2
+                                    },
+                                    animation: {
+                                        duration: 500
+                                    },
                                     grouping: false,
                                     shadow: false,
                                     borderWidth: 0
@@ -119,9 +146,14 @@ angular.module('HazriSV')
                             crosshair: true
                         },
                         yAxis: {
+                            //tickInterval: 2,
                             min: 0,
                             title: {
                                 text: 'No. of Practicals'
+                            },
+                            labels:
+                            {
+                                enabled: false
                             },
                             allowDecimals: false
                         },
@@ -140,7 +172,9 @@ angular.module('HazriSV')
                         },
                         loading: false
                     };
-                    $scope.$broadcast('scroll.refreshComplete');
+                    // $scope.$broadcast('scroll.refreshComplete');
+                    $scope.done = true;
+                    $ionicLoading.hide();
                 });
         };
         $scope.getdata();

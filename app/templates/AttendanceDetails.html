@@ -1,49 +1,49 @@
 ﻿<ion-view title="Attendance Stats">
-    <ion-content class="has-header">
-        <div class="wrap attcontainer">
-            <div class="card">
-                <div>
-                    <div class="row">
-                        <div class="col col-25">
-                            <strong>Name </strong>
-                        </div>
-                        <div class="col">
-                            {{data.name}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-25">
-                            <strong>UID  </strong>
-                        </div>
-                        <div class="col">
-                            {{data.uid}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-25">
-                            <strong>Roll No </strong>
-                        </div>
-                        <div class="col">
-                            {{data.rollno}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-25">
-                            <strong>Extras</strong>
-                        </div>
-                        <div class="col">
-                            {{data.extra}}
-                        </div>
-                    </div>
+<ion-content class="has-header" on-swipe-right="goBack()">
+<div class="wrap attcontainer" >
+    <div class="card">
+        <div>
+            <div class="row">
+                <div class="col col-25">
+                    <strong>Name </strong>
                 </div>
-                <div class="item item-text-wrap" style="font-size: 20px;">
-                    Total Attendance <strong id="percent" ng-class="per.totper>80?'ok':(per.totper<75&&per.totper>0?'defaulter':'warn')">{{per.totper | number:2}} %</strong>
+                <div class="col">
+                    {{data.name}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-25">
+                    <strong>UID  </strong>
+                </div>
+                <div class="col">
+                    {{data.uid}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-25">
+                    <strong>Roll No </strong>
+                </div>
+                <div class="col">
+                    {{data.rollno}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-25">
+                    <strong>Extras</strong>
+                </div>
+                <div class="col">
+                    {{data.extra}}
                 </div>
             </div>
         </div>
-        <div class="attcontainer center" style="margin-bottom:10px">
-            <highchart id="chart2" class="graphwrap" config="theory"></highchart>
-            <highchart id="chart3" class="graphwrap" config="practical"></highchart>
+        <div class="item item-text-wrap" style="font-size: 20px;">
+            Total Attendance <strong id="percent" ng-class="per.totper>80?'ok':(per.totper<75&&per.totper>0?'defaulter':'warn')"> {{per.totper | number:2}} %</strong>
         </div>
-    </ion-content>
+    </div>
+</div>
+<div class="attcontainer center" style="margin-bottom:10px" ng-show="done">
+    <highchart id="chart2" class="graphwrap" config="theory"></highchart>
+    <highchart id="chart3" class="graphwrap" config="practical"></highchart>
+</div>
+</ion-content>
 </ion-view>

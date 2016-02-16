@@ -1,4 +1,11 @@
 {
   "name": "hazrisv",
-  "app_id": "6582151b"
+  "app_id": "6582151b",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk-lite",
+      "version": "10.39.236.1"
+    }
+  ]
 }

@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.attendance.hazrisv" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Hazri-SV</name>
-  <description>&#xD;&#xD;
-    Check your daily attendance on your mobile phones.&#xD;
+<widget id="com.attendance.hazrisv" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Hazri</name>
+  <description>
+
+    Check your daily attendance on your mobile phones.
   </description>
-  <author email="s3.netchamp@gmail.com">&#xD;&#xD;
-    Faris And Suraj&#xD;&#xD;
+  <author email="s3.netchamp@gmail.com">
+
+    Faris And Suraj
+
   </author>
   <content src="index.html"/>
   <access origin="*"/>
+  <allow-navigation href="http://*/*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreen" value="none"/>
+  <preference name="xwalkVersion" value="16+"/>
+  <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
+  <preference name="xwalkMode" value="embedded"/>
+  <preference name="xwalkMultipleApk" value="true"/>
   <preference name="SplashScreenDelay" value="3000"/>
   <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+    <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
   <platform name="android">
     <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
