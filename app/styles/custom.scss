@@ -245,6 +245,69 @@
 
 .profile{
     width:80px;
-    height:80px; 
+    height:80px;
     border-radius:30%;
+}
+
+//sidemenu
+.sidemenu {
+  background-color: $positive !important;
+  color: #efefef;
+}
+.sidemenu .scroll-content {
+  background-color: $positive !important;
+  padding: 0 10px;
+}
+.sidemenu .item {
+  background-color: $positive;
+  border: none;
+  //border-top: 1px solid #464646;
+  border-bottom: 2px solid #0a9dc7;
+  //padding: 20px;
+  max-height: 50px;
+}
+.sidemenu .item:first-child {
+  //border-top: 1px solid black;
+}
+.sidemenu .item:last-child {
+  border-bottom: 1px solid #0a9dc7;
+}
+.sidemenu .item.current {
+  background-color: #262727 !important;
+  border-top: 1px solid #464646 !important;
+  border-bottom: 2px solid #333333 !important;
+}
+.sidemenu .item.current p, .dark .item.current h3 {
+  opacity: .7;
+}
+.sidemenu h2,
+.sidemenu h3,
+.sidemenu p {
+  color: #F0F1F1;
+}
+
+.sidemenu-head {
+  text-decoration: none;
+}
+
+//fest events
+
+.list.card.padding-fix {
+  margin: 5px;
+}
+.subevents {
+  padding-top: 0;
+  .subevent:last-child{
+    padding-bottom: 0;
+  }
+}
+.subevent{
+  padding-top: 0;
+  h2{
+    padding-bottom:0;
+    margin-bottom: 2px;
+  }
+  p{
+    margin: 0;
+  }
 }

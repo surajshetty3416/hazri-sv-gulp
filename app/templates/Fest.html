@@ -1,0 +1,32 @@
+<ion-view title="{{festName}}">
+    <ion-content class="padding stable-bg" lazy-scroll>
+      <div class="list card padding-fix" ng-repeat="event in events | orderObjectBy:'timestamp'" ng-init="event.show = false">
+
+        <div class="item" ng-click="event.show = !event.show">
+          <h2>{{event.eventName}}
+          </h2>
+          <p>{{event.date | date:'dd MMMM, yyyy' }}
+            <span class="item-note" ng-if="isNumber(event.roomno)">Room no {{event.roomno}}</span>
+          </p>
+        </div>
+
+        <div class="item item-body" ng-show="event.show">
+          <img class="full-image" image-lazy-src="{{event.img}}" ng-if="event.img">
+          <p>
+            {{event.desc}}
+          </p>
+          <p>
+            From: <a class="subdued">{{event.from | timeFilter}}</a>
+            To: <a class="subdued">{{event.to | timeFilter}}</a>
+          </p>
+        </div>
+        <div class="item item-body subevents" ng-if="event.subevents" ng-show="event.show">
+          <h2>Sub-Events</h2>
+          <div class="item subevent" ng-repeat="sub in event.subevents">
+            <h2>{{sub.title}}</h2>
+            <p>{{sub.desc}}</p>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

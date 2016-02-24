@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'highcharts-ng'])
+angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'highcharts-ng', 'ionicLazyLoad'])
 
     .run(function ($ionicPlatform, $rootScope, $ionicLoading, $window, $localstorage, $state, $cordovaNetwork, $filter , $ionicHistory) {
         $ionicPlatform.ready(function () {
@@ -62,15 +62,39 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
 
     })
 
-    .config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
+    .config(function ($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
         $stateProvider
 
-            .state('select', {
+            .state('main', {
+                url: '/main',
+                templateUrl: 'templates/SideMenu.html',
+                controller: 'SideMenuCtrl',
+                abstract: true
+            })
+
+            .state('main.select', {
                 url: '/select',
                 //cache: false,
-                templateUrl: 'templates/Select.html',
-                controller: 'SelectCtrl'
+                views: {
+                  'main': {
+                    templateUrl: 'templates/Select.html',
+                    controller: 'SelectCtrl'
+                  }
+                }
+            })
+
+            .state('main.fest', {
+              url: '/fest',
+              params: {
+                name: null
+              },
+              views: {
+                'main': {
+                  templateUrl: 'templates/Fest.html',
+                  controller: 'FestCtrl'
+                }
+              }
             })
 
             .state('reportbugs', {
@@ -134,9 +158,10 @@ angular.module('HazriSV', ['ionic', 'ngCordova', 'ngResource', 'firebase', 'high
                 templateUrl: 'templates/AttendanceDetails.html',
                 controller: 'AttendanceDetailsCtrl'
 
-            })
+            });
 
-        $urlRouterProvider.otherwise('/select');
+        $urlRouterProvider.otherwise('/main/select');
+        $ionicConfigProvider.scrolling.jsScrolling(false);
     });
 
 
